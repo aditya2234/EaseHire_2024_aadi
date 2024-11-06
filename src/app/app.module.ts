@@ -9,6 +9,8 @@ import { LandingpageComponent } from './components/landingpage/landingpage.compo
 import { SkillManagementComponent } from './components/skill-management/skill-management.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CandidateHomeComponent } from './components/candidate-home/candidate-home.component';
+import { InterviewerHomeComponent } from './components/interviewer-home/interviewer-home.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FooterComponent,
     LandingpageComponent,
     SkillManagementComponent
+    CandidateHomeComponent,
+    InterviewerHomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
+.container {
+  @apply mx-auto p-1 relative;
+}
+
+.section {
+  @apply my-10 p-6 bg-white bg-opacity-90 rounded-lg shadow-md text-gray-800;
+}
+
+.header {
+  @apply relative bg-cover bg-center h-screen text-white flex flex-col items-center justify-center;
+  background-size: cover;
+}
+
+.header-content {
+  @apply bg-black bg-opacity-70 p-9 rounded-lg text-center;
+}
+
+.section-title {
+  @apply text-4xl font-semibold text-center mb-4 text-primary;
+}
+
+.section-subtitle {
+  @apply text-4xl font-extrabold mt-4;
+}
+
+.service-card {
+  @apply bg-green-100 p-6 rounded-lg shadow-md;
+}
+
+.feature-card{
+    @apply bg-red-100 p-6 rounded-lg shadow-md;
+}
+
+.stats-card {
+  @apply p-6 text-center;
+}
+
+.logo-slider {
+  @apply flex overflow-x-hidden;
+}
+
+.logo-item {
+  @apply w-60 transition duration-300;
+}
