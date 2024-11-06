@@ -1,1 +1,56 @@
-<p>footer works!</p>
+<div class="container">
+  <footer class="text-center text-lg-start text-dark bg-gray-200">
+    <section class="flex justify-between p-4 text-white bg-green-500">
+      <div class="me-5">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <div>
+        <a *ngFor="let link of footerData.socialLinks" [href]="link.url" class="text-white me-4">
+          <i [class]="link.iconClass"></i>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <div class="container text-center text-md-start mt-5">
+        <div class="flex flex-wrap mt-3">
+          <div class="w-full md:w-1/4 lg:w-1/3 xl:w-1/4 mb-4">
+            <h6 class="text-uppercase font-bold">{{ footerData.company.name }}</h6>
+            <hr class="mb-4 mt-0 mx-auto w-16 bg-purple-500 h-1" />
+            <p>{{ footerData.company.description }}</p>
+          </div>
+
+          <div class="w-full md:w-1/4 lg:w-1/6 xl:w-1/6 mb-4">
+            <h6 class="text-uppercase font-bold">Products</h6>
+            <hr class="mb-4 mt-0 mx-auto w-16 bg-purple-500 h-1" />
+            <p *ngFor="let product of footerData.products">
+              <a [href]="product.url" class="text-dark">{{ product.name }}</a>
+            </p>
+          </div>
+
+          <div class="w-full md:w-1/4 lg:w-1/6 xl:w-1/6 mb-4">
+            <h6 class="text-uppercase font-bold">Useful links</h6>
+            <hr class="mb-4 mt-0 mx-auto w-16 bg-purple-500 h-1" />
+            <p *ngFor="let link of footerData.usefulLinks">
+              <a [href]="link.url" class="text-dark">{{ link.name }}</a>
+            </p>
+          </div>
+
+          <div class="w-full md:w-1/4 lg:w-1/3 xl:w-1/4 mb-4">
+            <h6 class="text-uppercase font-bold">Contact</h6>
+            <hr class="mb-4 mt-0 mx-auto w-16 bg-purple-500 h-1" />
+            <p><i class="fas fa-home mr-3"></i> {{ footerData.contact.address }}</p>
+            <p><i class="fas fa-envelope mr-3"></i> {{ footerData.contact.email }}</p>
+            <p><i class="fas fa-phone mr-3"></i> {{ footerData.contact.phone }}</p>
+            <p><i class="fas fa-print mr-3"></i> {{ footerData.contact.fax }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center p-3 bg-gray-300">
+      © 2024 Copyright:
+      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+  </footer>
+</div>
