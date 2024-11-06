@@ -18,7 +18,7 @@ import { InterviewerHomeComponent } from './components/interviewer-home/intervie
     NavbarComponent,
     FooterComponent,
     LandingpageComponent,
-    SkillManagementComponent
+    SkillManagementComponent,
     CandidateHomeComponent,
     InterviewerHomeComponent
   ],
