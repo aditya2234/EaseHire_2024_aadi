@@ -1,0 +1,37 @@
+footer {
+  @apply bg-footerBg text-footerText p-4;
+}
+
+
+footer h2, footer h3 {
+  @apply text-xl mb-2;
+}
+
+footer p {
+  @apply mb-1;
+}
+
+footer ul {
+  @apply list-none p-0 mb-4 flex flex-wrap justify-center md:justify-start;
+}
+
+footer ul li {
+  @apply inline mx-2;
+}
+
+
+footer section div a{  
+  @apply hover:text-footerLinkHover
+}
+
+footer iframe {
+  @apply my-2;
+}
+
+footer .flex {
+  @apply justify-center;
+}
+
+footer img {
+  @apply h-10;
+}
