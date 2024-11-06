@@ -1,1 +1,23 @@
-<p>candidate-home works!</p>
+<div class="main">
+  <div class="current_jobs">
+    <h2>Current Jobs</h2>
+    <div class="job_list">
+      <div *ngFor="let job of job_description" class="card-class">
+        <h5 class="card-title">{{ job.title }}</h5>
+        <p class="card-text">Department: {{ job.department }}</p>
+        <p class="card-text">Location: {{ job.location }}</p>
+        <p class="card-text">Salary Range: {{ job.salaryRange }}</p>
+        <p class="card-text">Posted Date: {{ job.postedDate }}</p>
+        <p class="card-text">Application Deadline: {{ job.applicationDeadline }}</p>
+        <div *ngIf="job.showMore">
+          <p class="card-text">Description: {{ job.description }}</p>
+          <p class="card-text">Requirements: {{ job.requirements }}</p>
+        </div>
+        <button (click)="toggleReadMore(job)" class="read-more-btn">
+          {{ job.showMore ? 'Read Less' : 'Read More' }}
+        </button>
+        <button class="apply-button">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
