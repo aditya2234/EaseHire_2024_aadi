@@ -1,0 +1,54 @@
+.main {
+    background-color: blanchedalmond;
+    padding: 20px;
+  }
+  
+  .current_jobs {
+    background-color: rgb(200, 176, 141);
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .current_jobs h2 {
+    background-color: rgb(229, 215, 215);
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .job_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .card-class {
+    background-color: pink;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(25% - 10px); /* Adjusts to 4 cards per row */
+    box-sizing: border-box;
+  }
+  
+  .card-title {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    margin: 5px 0;
+  }
+  
+  .read-more-btn, .apply-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .read-more-btn:hover, .apply-button:hover {
+    background-color: darkblue;
+  }
+  
