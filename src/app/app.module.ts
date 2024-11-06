@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
+import { SkillManagementComponent } from './components/skill-management/skill-management.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CandidateHomeComponent } from './components/candidate-home/candidate-home.component';
 import { InterviewerHomeComponent } from './components/interviewer-home/interviewer-home.component';
 
@@ -15,12 +18,15 @@ import { InterviewerHomeComponent } from './components/interviewer-home/intervie
     NavbarComponent,
     FooterComponent,
     LandingpageComponent,
+    SkillManagementComponent,
     CandidateHomeComponent,
     InterviewerHomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
