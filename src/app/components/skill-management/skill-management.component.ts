@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { SkillService } from '../../services/skill-management.service';
+
 
 @Component({
   selector: 'app-skill-management',
@@ -11,7 +13,8 @@ export class SkillManagementComponent implements OnInit {
   skills: any[] = [];
   editingSkill: any | null = null;
 
-  constructor(private fb: FormBuilder) {}
+
+  constructor(private fb: FormBuilder, private skillService:SkillService) {}
 
   ngOnInit(): void {
     this.skillForm = this.fb.group({
@@ -23,33 +26,38 @@ export class SkillManagementComponent implements OnInit {
   }
 
   loadSkills(): void {
-    // Mock data
-    this.skills = [
-      { SKILL_ID: 1, SKILL_NAME: 'JavaScript', SKILL_TYPE: 'Programming', DESCRIPTION: 'JavaScript programming language' },
-      { SKILL_ID: 2, SKILL_NAME: 'Angular', SKILL_TYPE: 'Framework', DESCRIPTION: 'Angular framework for building web applications' }
-    ];
+    this.skillService.getSkills().subscribe((data:any) => {
+      console.log(data); 
+      this.skills = data.items || data; 
+    });
   }
 
   onSubmit(): void {
     if (this.editingSkill) {
       const updatedSkill = { ...this.editingSkill, ...this.skillForm.value };
-      const index = this.skills.findIndex(skill => skill.SKILL_ID === updatedSkill.SKILL_ID);
-      this.skills[index] = updatedSkill;
-      this.editingSkill = null;
-      this.skillForm.reset();
+      this.skillService.updateSkill(updatedSkill).subscribe(() => {
+        this.loadSkills();
+        this.editingSkill = null;
+        this.skillForm.reset();
+      });
     } else {
-      const newSkill = { ...this.skillForm.value, SKILL_ID: this.skills.length + 1 };
-      this.skills.push(newSkill);
-      this.skillForm.reset();
+      this.skillService.addSkill(this.skillForm.value).subscribe(() => {
+        this.loadSkills();
+        this.skillForm.reset();
+      });
     }
   }
 
   editSkill(skill: any): void {
-    this.editingSkill = skill;
-    this.skillForm.patchValue(skill);
+    this.skillService.getSkillById(skill.SKILL_ID).subscribe((data:any) => {
+      this.editingSkill = data;
+      this.skillForm.patchValue(data);
+    });
   }
 
   deleteSkill(skillId: number): void {
-    this.skills = this.skills.filter(skill => skill.SKILL_ID !== skillId);
+    this.skillService.deleteSkill(skillId).subscribe(() => {
+      this.loadSkills();
+    });
   }
 }
