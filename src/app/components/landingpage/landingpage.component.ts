@@ -15,6 +15,15 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       transition(':leave', [
         animate('600ms', style({ opacity: 0 }))
       ])
+    ]),
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({ height: 0, opacity: 0 }),
+        animate('300ms ease-out', style({ height: '*', opacity: 1 }))
+      ]),
+      transition(':leave', [
+        animate('300ms ease-in', style({ height: 0, opacity: 0 }))
+      ])
     ])
   ]
 })
@@ -41,6 +50,24 @@ export class LandingpageComponent
         company: 'XYZ Inc',
         image: 'https://thumbs.dreamstime.com/b/profile-picture-young-indian-woman-renter-headshot-portrait-confident-tenant-pose-modern-own-new-apartment-house-226719004.jpg',
         message: 'EaseHire is a game-changer for our hiring process. We\'ve been able to find top talent quickly and efficiently.'
+      }
+    ];
+
+    faqs = [
+      {
+        question: 'What is EaseHire?',
+        answer: 'EaseHire is an innovative hiring solution that helps organizations streamline their recruitment processes and find top talent efficiently.',
+        open: false
+      },
+      {
+        question: 'How does EaseHire work?',
+        answer: 'EaseHire uses advanced algorithms and AI to match job seekers with the best job opportunities based on their skills and experience.',
+        open: false
+      },
+      {
+        question: 'Is EaseHire suitable for all industries?',
+        answer: 'Yes, EaseHire is designed to be versatile and can be used by organizations in various industries to improve their hiring processes.',
+        open: false
       }
     ];
   }
