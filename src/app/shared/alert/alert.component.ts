@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AlertComponent implements OnInit {
   @Input() duration = 5000; // Duration in milliseconds
   isVisible = false;
-  timerWidth = 100;
+  timerWidth = 0;
 
   ngOnInit() {
     this.showAlert();
@@ -19,7 +19,8 @@ export class AlertComponent implements OnInit {
     this.timerWidth = 100;
     setTimeout(() => {
       this.timerWidth = 0;
-    }, 0);
+    }, 100);
+
     setTimeout(() => {
       this.isVisible = false;
     }, this.duration);
