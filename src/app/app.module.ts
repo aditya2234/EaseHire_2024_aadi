@@ -9,13 +9,17 @@ import { LandingpageComponent } from './components/landingpage/landingpage.compo
 
 import { SkillManagementComponent } from './components/skill-management/skill-management.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { CandidateHomeComponent } from './components/candidate-home/candidate-home.component';
 import { InterviewerHomeComponent } from './components/interviewer-home/interviewer-home.component';
 import { CandidateService } from './services/candidate.service';
+import { ButtonComponent } from './shared/button/button.component';
+import { SharedModule } from './shared/shared.module';
+import { CardComponent } from './shared/card/card.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -26,13 +30,17 @@ import { CandidateService } from './services/candidate.service';
     LandingpageComponent,
     SkillManagementComponent,
     CandidateHomeComponent,
-    InterviewerHomeComponent
+    InterviewerHomeComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
