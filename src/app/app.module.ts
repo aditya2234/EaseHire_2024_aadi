@@ -15,10 +15,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { CandidateHomeComponent } from './components/candidate-home/candidate-home.component';
 import { InterviewerHomeComponent } from './components/interviewer-home/interviewer-home.component';
-import { CandidateService } from './services/candidate.service';
-import { ButtonComponent } from './shared/button/button.component';
 import { SharedModule } from './shared/shared.module';
-import { CardComponent } from './shared/card/card.component';
 import { LoginComponent } from './components/login/login.component';
 
 
@@ -40,8 +37,8 @@ import { LoginComponent } from './components/login/login.component';
     ReactiveFormsModule,
     HttpClientModule,
     SharedModule,
-    FormsModule
-  ],
+    FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
