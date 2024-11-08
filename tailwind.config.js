@@ -6,6 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        footerUnderline:'var(--footer-bg-underline)',
+        footerStrip:'var(--footer-bg-strip-color)',
         footerBg: 'var(--footer-bg-color)',
         footerText: 'var(--footer-text-color)',
         footerLink: 'var(--footer-link-color)',

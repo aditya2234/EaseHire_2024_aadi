@@ -14,4 +14,6 @@
     --footer-text-color: #170101;
     --footer-link-color: #050709;
     --footer-link-hover-color: #cfe3eb;
+    --footer-bg-strip-color:rgb(92, 182, 92);
+    --footer-bg-underline:rgb(230, 34, 230);
   }

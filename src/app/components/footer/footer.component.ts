@@ -9,6 +9,9 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+runThis() {
+throw new Error('Method not implemented.');
+}
   footerData: any;
 
   constructor(private footerService: FooterContentService) { }
