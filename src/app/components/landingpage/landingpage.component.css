@@ -1,51 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom Styles */
-.container {
-  @apply mx-auto p-1 relative;
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-.section {
-  @apply my-10 p-6 bg-white bg-opacity-90 rounded-lg shadow-md text-gray-800;
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.header {
-  @apply relative bg-cover bg-center h-screen text-white flex flex-col items-center justify-center;
-  background-size: cover;
+.testimonial-card {
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.header-content {
-  @apply bg-black bg-opacity-70 p-9 rounded-lg text-center;
+.testimonial-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.section-title {
-  @apply text-4xl font-semibold text-center mb-4 text-primary;
+.flex.items-center {
+  display: flex;
+  align-items: center;
 }
 
-.section-subtitle {
-  @apply text-4xl font-extrabold mt-4;
-}
-
-.service-card {
-  @apply bg-green-100 p-6 rounded-lg shadow-md;
-}
-
-.feature-card{
-    @apply bg-red-100 p-6 rounded-lg shadow-md;
-}
-
-.stats-card {
-  @apply p-6 text-center;
-}
-
-.logo-slider {
-  @apply flex overflow-x-hidden;
-}
-
-.logo-item {
-  @apply w-60 transition duration-300;
+.ml-4 {
+  margin-left: 1rem;
 }
