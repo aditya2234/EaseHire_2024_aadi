@@ -1,0 +1,6 @@
+<div class="alert" *ngIf="isVisible">
+  <div class="alert-content">
+    <ng-content></ng-content>
+  </div>
+  <div class="timer-bar" [style.width.%]="timerWidth"></div>
+</div>
