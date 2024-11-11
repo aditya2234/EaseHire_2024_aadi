@@ -9,13 +9,15 @@ import { LandingpageComponent } from './components/landingpage/landingpage.compo
 
 import { SkillManagementComponent } from './components/skill-management/skill-management.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { CandidateHomeComponent } from './components/candidate-home/candidate-home.component';
 import { InterviewerHomeComponent } from './components/interviewer-home/interviewer-home.component';
 import { CandidateService } from './services/candidate.service';
+import { InterviewerService } from './services/interviewer.service';
+import { PmoHomeComponent } from './components/pmo-home/pmo-home.component';
 
 
 @NgModule({
@@ -26,13 +28,15 @@ import { CandidateService } from './services/candidate.service';
     LandingpageComponent,
     SkillManagementComponent,
     CandidateHomeComponent,
-    InterviewerHomeComponent
+    InterviewerHomeComponent,
+    PmoHomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
