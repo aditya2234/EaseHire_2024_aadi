@@ -19,6 +19,11 @@ export class NavbarService {
       marks: "Marks",
       assessment: "Assessment",
       schedule: "Schedule"
+    },
+    option3:{
+      candidate:"Candidate",
+      interviewer:"Interviewer",
+      
     }
   };
 }

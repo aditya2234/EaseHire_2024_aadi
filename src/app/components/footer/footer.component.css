@@ -7,8 +7,16 @@ footer h2, footer h3 {
   @apply text-xl mb-2;
 }
 
+.footerStrip{
+  @apply bg-footerStrip;  
+}
+
 footer p {
   @apply mb-1;
+}
+
+hr{
+  @apply bg-footerUnderline
 }
 
 footer ul {

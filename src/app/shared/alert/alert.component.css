@@ -1,0 +1,10 @@
+.alert {
+  @apply fixed top-20 right-4 bg-red-500 text-white p-4 rounded shadow-lg w-96;
+}
+.alert-content {
+  @apply flex items-center justify-between;
+}
+.timer-bar {
+  @apply h-1 bg-white mt-2;
+  transition: width 5s linear;
+}

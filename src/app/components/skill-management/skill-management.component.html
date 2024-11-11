@@ -24,11 +24,10 @@
         <div class="flex justify-between items-center">
           <div>
             <h3 class="text-lg font-medium">{{ skill.SKILL_NAME }} ({{ skill.SKILL_TYPE }})</h3>
-            <p class="text-sm text-gray-500">{{ skill.DESCRIPTION }}</p>
           </div>
           <div class="space-x-2">
-            <button (click)="editSkill(skill)" class="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Edit</button>
-            <button (click)="deleteSkill(skill.SKILL_ID)" class="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Delete</button>
+            <app-edit-button (click)="editSkill(skill)">Edit</app-edit-button>
+            <app-delete-button (click)="deleteSkill(skill.SKILL_ID)">Delete</app-delete-button>
           </div>
         </div>
       </li>

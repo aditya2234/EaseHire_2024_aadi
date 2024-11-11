@@ -11,6 +11,7 @@ export class NavbarComponent {
   isLoggedIn: boolean = true;
   isAdmin: boolean = false;
   isInterviewee: boolean = true;
+  isInterviewer: boolean = false;
 
   constructor(private navbarService: NavbarService) { }
 
@@ -19,15 +20,33 @@ export class NavbarComponent {
   }
 
   showAdminOptions(): void {
-    if (this.isAdmin) {
+    if (this.isAdmin && this.isLoggedIn) {
       this.navbarOptions = this.navbarService.navbar_options.option2;
     }
+    // else{
+    //   this.navbarOptions = this.navbarService.navbar_options.option3
+    // }
   }
 
-  showInterviewOptions(): void {
-    if (this.isInterviewee) {
+  showIntervieweeOptions(): void {
+    if (this.isInterviewee && this.isLoggedIn) {
       this.navbarOptions = this.navbarService.navbar_options.option1;
     }
+    // else{
+    //   this.navbarOptions = this.navbarService.navbar_options.option3
+    // }
+  }
+  showInterviewerOptions(): void {
+    if (this.isInterviewer && this.isLoggedIn) {
+      this.navbarOptions = this.navbarService.navbar_options.option3;
+    }
+    // else{
+    //   this.navbarOptions = this.navbarService.navbar_options.option3
+    // }
+  }
+
+  isLoggedOut(){
+    this.isLoggedIn = false
   }
 
   
