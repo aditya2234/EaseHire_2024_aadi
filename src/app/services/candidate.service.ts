@@ -13,6 +13,6 @@ export class CandidateService {
 
   }
   getAllJobs(){
-    return internalJobPostings
+    return internalJobPostings;
   }
 }

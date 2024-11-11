@@ -15,6 +15,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { CandidateHomeComponent } from './components/candidate-home/candidate-home.component';
 import { InterviewerHomeComponent } from './components/interviewer-home/interviewer-home.component';
+import { CandidateService } from './services/candidate.service';
+import { InterviewerService } from './services/interviewer.service';
+import { PmoHomeComponent } from './components/pmo-home/pmo-home.component';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './components/login/login.component';
 
@@ -28,8 +31,8 @@ import { LoginComponent } from './components/login/login.component';
     SkillManagementComponent,
     CandidateHomeComponent,
     InterviewerHomeComponent,
-    LoginComponent,
-    
+    PmoHomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,9 +40,9 @@ import { LoginComponent } from './components/login/login.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SharedModule,
     FormsModule,
-    ],
+    SharedModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
