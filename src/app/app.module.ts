@@ -20,6 +20,7 @@ import { ButtonComponent } from './shared/button/button.component';
 import { SharedModule } from './shared/shared.module';
 import { CardComponent } from './shared/card/card.component';
 import { LoginComponent } from './components/login/login.component';
+import { ConfigurablePageComponent } from './components/configurable-page/configurable-page.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { LoginComponent } from './components/login/login.component';
     CandidateHomeComponent,
     InterviewerHomeComponent,
     LoginComponent,
+    ConfigurablePageComponent,
     
   ],
   imports: [
