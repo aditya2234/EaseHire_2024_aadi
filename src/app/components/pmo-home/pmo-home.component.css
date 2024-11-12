@@ -1,0 +1,105 @@
+.pmoHome {
+  padding: 20px;
+}
+
+.headings {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.schedule-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.invite-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.invite-button:hover {
+  background-color: #0056b3;
+}
+
+/* for job description */
+.jobDetails {
+  background-color: blanchedalmond;
+  padding: 20px;
+}
+
+.current_jobs {
+  background-color: rgb(200, 176, 141);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.current_jobs h2 {
+  background-color: rgb(229, 215, 215);
+  padding: 10px;
+  margin: 0;
+}
+
+.job_lists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card-class {
+  background-color: pink;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(25% - 10px); /* Adjusts to 4 cards per row */
+  box-sizing: border-box;
+}
+
+.card-titlee {
+  font-size: 1.25em;
+  margin-bottom: 10px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.card-textt {
+  margin: 5px 0;
+}
+
+.read-more-btnn {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.read-more-btnn:hover, .apply-button:hover {
+  background-color: darkblue;
+}

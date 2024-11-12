@@ -1,0 +1,76 @@
+{
+    "interviewers": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "phone": "987-654-3210",
+            "position": "Senior Financial Analyst",
+            "grade": "Level 3"
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "email": "jane.smith@example.com",
+            "phone": "876-543-2109",
+            "position": "Marketing Manager",
+            "grade": "Level 2"
+        },
+        {
+            "id": 3,
+            "name": "Alice Johnson",
+            "email": "alice.johnson@example.com",
+            "phone": "765-432-1098",
+            "position": "IT Manager",
+            "grade": "Level 3"
+        },
+        {
+            "id": 4,
+            "name": "Bob Brown",
+            "email": "bob.brown@example.com",
+            "phone": "654-321-0987",
+            "position": "Lead Software Engineer",
+            "grade": "Level 4"
+        },
+        {
+            "id": 5,
+            "name": "Charlie Davis",
+            "email": "charlie.davis@example.com",
+            "phone": "543-210-9876",
+            "position": "Finance Manager",
+            "grade": "Level 3"
+        },
+        {
+            "id": 6,
+            "name": "Diana Evans",
+            "email": "diana.evans@example.com",
+            "phone": "432-109-8765",
+            "position": "DevOps Lead",
+            "grade": "Level 4"
+        },
+        {
+            "id": 7,
+            "name": "Ethan Foster",
+            "email": "ethan.foster@example.com",
+            "phone": "321-098-7654",
+            "position": "Senior DevOps Engineer",
+            "grade": "Level 3"
+        },
+        {
+            "id": 8,
+            "name": "Fiona Green",
+            "email": "fiona.green@example.com",
+            "phone": "210-987-6543",
+            "position": "Software Development Manager",
+            "grade": "Level 4"
+        },
+        {
+            "id": 9,
+            "name": "Grace Hall",
+            "email": "grace.hall@example.com",
+            "phone": "109-876-5432",
+            "position": "Senior Financial Analyst",
+            "grade": "Level 3"
+        }
+    ]
+}

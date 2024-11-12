@@ -14,7 +14,8 @@
         ],
         "salaryRange": "$120,000 - $140,000",
         "postedDate": "2024-11-01",
-        "applicationDeadline": "2024-11-15"
+        "applicationDeadline": "2024-11-15",
+        "vacancies": 32
       },
       {
         "id": 2,
@@ -30,7 +31,8 @@
         ],
         "salaryRange": "$90,000 - $110,000",
         "postedDate": "2024-10-25",
-        "applicationDeadline": "2024-11-10"
+        "applicationDeadline": "2024-11-10",
+        "vacancies": 15
       },
       {
         "id": 3,
@@ -46,7 +48,8 @@
         ],
         "salaryRange": "$70,000 - $85,000",
         "postedDate": "2024-11-02",
-        "applicationDeadline": "2024-11-16"
+        "applicationDeadline": "2024-11-16",
+        "vacancies": 22
       },
       {
         "id": 4,
@@ -62,7 +65,8 @@
         ],
         "salaryRange": "$100,000 - $120,000",
         "postedDate": "2024-10-30",
-        "applicationDeadline": "2024-11-14"
+        "applicationDeadline": "2024-11-14",
+        "vacancies": 5
       },
       {
         "id": 5,
@@ -78,7 +82,8 @@
         ],
         "salaryRange": "$80,000 - $95,000",
         "postedDate": "2024-11-01",
-        "applicationDeadline": "2024-11-15"
+        "applicationDeadline": "2024-11-15",
+        "vacancies": 9
       },
       {
         "id": 6,
@@ -94,7 +99,8 @@
         ],
         "salaryRange": "$50,000 - $65,000",
         "postedDate": "2024-11-03",
-        "applicationDeadline": "2024-11-17"
+        "applicationDeadline": "2024-11-17",
+        "vacancies": 4
       },
       {
         "id": 7,
@@ -110,7 +116,8 @@
         ],
         "salaryRange": "$85,000 - $100,000",
         "postedDate": "2024-11-04",
-        "applicationDeadline": "2024-11-18"
+        "applicationDeadline": "2024-11-18",
+        "vacancies": 1
       },
       {
         "id": 8,
@@ -126,7 +133,8 @@
         ],
         "salaryRange": "$110,000 - $130,000",
         "postedDate": "2024-11-05",
-        "applicationDeadline": "2024-11-19"
+        "applicationDeadline": "2024-11-19",
+        "vacancies": 2
       },
       {
         "id": 9,
@@ -142,7 +150,8 @@
         ],
         "salaryRange": "$95,000 - $115,000",
         "postedDate": "2024-11-06",
-        "applicationDeadline": "2024-11-20"
+        "applicationDeadline": "2024-11-20",
+        "vacancies": 1
       },
       {
         "id": 10,
@@ -158,7 +167,8 @@
         ],
         "salaryRange": "$60,000 - $75,000",
         "postedDate": "2024-11-07",
-        "applicationDeadline": "2024-11-21"
+        "applicationDeadline": "2024-11-21",
+        "vacancies": 3
       },
       {
         "id": 11,
@@ -174,7 +184,8 @@
         ],
         "salaryRange": "$55,000 - $70,000",
         "postedDate": "2024-11-08",
-        "applicationDeadline": "2024-11-22"
+        "applicationDeadline": "2024-11-22",
+        "vacancies": 2
       },
       {
         "id": 12,
@@ -190,7 +201,25 @@
         ],
         "salaryRange": "$105,000 - $125,000",
         "postedDate": "2024-11-09",
-        "applicationDeadline": "2024-11-23"
+        "applicationDeadline": "2024-11-23",
+        "vacancies": 1
+      },
+      {
+        "id": 13,
+        "title": "Graphic Designer",
+        "department": "Design",
+        "location": "Remote",
+        "description": "Create visually appealing graphics for marketing materials and product interfaces.",
+        "requirements": [
+          "Bachelor's degree in Graphic Design or related field",
+          "2+ years of experience in graphic design",
+          "Proficiency in Adobe Creative Suite",
+          "Strong portfolio showcasing design skills"
+        ],
+        "salaryRange": "$70,000 - $85,000",
+        "postedDate": "2024-11-10",
+        "applicationDeadline": "2024-11-24",
+        "vacancies": 2
       },
       {
         "id": 13,
@@ -206,7 +235,8 @@
         ],
         "salaryRange": "$70,000 - $85,000",
         "postedDate": "2024-11-10",
-        "applicationDeadline": "2024-11-24"
+        "applicationDeadline": "2024-11-24",
+        "vacancies": 5
       },
       {
         "id": 14,
@@ -222,7 +252,8 @@
         ],
         "salaryRange": "$75,000 - $90,000",
         "postedDate": "2024-11-11",
-        "applicationDeadline": "2024-11-25"
+        "applicationDeadline": "2024-11-25",
+        "vacancies": 10
       },
       {
             "id": 15,
@@ -238,7 +269,8 @@
             ],
             "salaryRange": "$85,000 - $100,000",
             "postedDate": "2024-11-11",
-            "applicationDeadline": "2024-11-25"
+            "applicationDeadline": "2024-11-25",
+            "vacancies": 20
           },
           {
             "id": 16,
@@ -254,7 +286,8 @@
             ],
             "salaryRange": "$75,000 - $90,000",
             "postedDate": "2024-11-12",
-            "applicationDeadline": "2024-11-26"
+            "applicationDeadline": "2024-11-26",
+            "vacancies": 5
           },
           {
             "id": 17,
@@ -270,7 +303,8 @@
             ],
             "salaryRange": "$110,000 - $130,000",
             "postedDate": "2024-11-13",
-            "applicationDeadline": "2024-11-27"
+            "applicationDeadline": "2024-11-27",
+            "vacancies": 7
           },
           {
             "id": 18,
@@ -286,7 +320,8 @@
             ],
             "salaryRange": "$95,000 - $115,000",
             "postedDate": "2024-11-14",
-            "applicationDeadline": "2024-11-28"
+            "applicationDeadline": "2024-11-28",
+            "vacancies": 11
           },
           {
             "id": 19,
@@ -302,7 +337,8 @@
             ],
             "salaryRange": "$120,000 - $140,000",
             "postedDate": "2024-11-15",
-            "applicationDeadline": "2024-11-29"
+            "applicationDeadline": "2024-11-29",
+            "vacancies": 20
           },
           {
             "id": 20,
@@ -318,7 +354,8 @@
             ],
             "salaryRange": "$90,000 - $110,000",
             "postedDate": "2024-11-16",
-            "applicationDeadline": "2024-11-30"
+            "applicationDeadline": "2024-11-30",
+            "vacancies": 3
           }
         ]
       }

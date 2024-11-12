@@ -15,10 +15,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { CandidateHomeComponent } from './components/candidate-home/candidate-home.component';
 import { InterviewerHomeComponent } from './components/interviewer-home/interviewer-home.component';
+import { CandidateService } from './services/candidate.service';
+import { InterviewerService } from './services/interviewer.service';
+import { PmoHomeComponent } from './components/pmo-home/pmo-home.component';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './components/login/login.component';
 import { CustomersViewAllComponent } from './components/customers-view-all/customers-view-all.component';
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
+import { ConfigurablePageComponent } from './components/configurable-page/configurable-page.component';
 
 
 @NgModule({
@@ -31,8 +35,6 @@ import { AddCustomerComponent } from './components/add-customer/add-customer.com
     CandidateHomeComponent,
     InterviewerHomeComponent,
     LoginComponent,
-    CustomersViewAllComponent,
-    AddCustomerComponent
     
   ],
   imports: [
@@ -41,9 +43,9 @@ import { AddCustomerComponent } from './components/add-customer/add-customer.com
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SharedModule,
     FormsModule,
-    ],
+    SharedModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

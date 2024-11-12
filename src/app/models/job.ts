@@ -1,4 +1,4 @@
-export interface Candidate {
+export interface Job {
     "id":number,
     "title": string,
     "department": string,

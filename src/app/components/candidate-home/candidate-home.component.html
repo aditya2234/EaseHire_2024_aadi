@@ -6,17 +6,21 @@
         <h5 class="card-title">{{ job.title }}</h5>
         <p class="card-text">Department: {{ job.department }}</p>
         <p class="card-text">Location: {{ job.location }}</p>
-        <p class="card-text">Salary Range: {{ job.salaryRange }}</p>
         <p class="card-text">Posted Date: {{ job.postedDate }}</p>
         <p class="card-text">Application Deadline: {{ job.applicationDeadline }}</p>
         <div *ngIf="job.showMore">
+          <p class="card-text">Salary Range: {{ job.salaryRange }}</p>
           <p class="card-text">Description: {{ job.description }}</p>
           <p class="card-text">Requirements: {{ job.requirements }}</p>
         </div>
+        <div class="state" *ngIf="pending">
+          <p style="color: blue;">{{status}}</p>
+        </div>
+        <p style="color: red;">{{message}}</p>
         <button (click)="toggleReadMore(job)" class="read-more-btn">
           {{ job.showMore ? 'Read Less' : 'Read More' }}
         </button>
-        <button class="apply-button">Apply</button>
+        <button class="apply-button" (click)="state()" >Apply</button>
       </div>
     </div>
   </div>

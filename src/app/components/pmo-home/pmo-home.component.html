@@ -1,0 +1,80 @@
+<div class="pmoHome">
+    <h1 class="headings">Today's Scheduled Interviews</h1>
+    <div class="main">
+        <div class="schedule-card" *ngFor="let schedule of schedules">
+            <h4 class="card-date">Date: {{ schedule.date }}</h4>
+            <h5 class="card-time">Time: {{ schedule.time }}</h5>
+            <div class="interviewerDetails">
+                <h5>Interviewer: <a href="#" (click)="showInterviewer(schedule.interviewer)">{{ schedule.interviewer.name }}</a></h5>
+            </div>
+            <div class="job-details">
+                <h5 class="card-text">Job Detail: <a href="#" (click)="showJobDetails(schedule.job)">{{ schedule.job.title }}</a></h5>
+            </div>
+            <div class="person-detail">
+                <p class="card-text">Candidate Detail: <a href="#" (click)="showCandidateDetails(schedule.candidate)">{{ schedule.candidate.name }}</a></p>
+            </div>
+            <button class="invite-button" (click)="invite(schedule)">Conduct</button>
+        </div>
+    </div>
+</div>
+
+<!-- Jobs details and vacancy -->
+<div class="jobDetails">
+    <div class="current_jobs">
+        <h2>Current Jobs</h2>
+        <div class="job_lists">
+            <div *ngFor="let job of job_description" class="card-class">
+                <h5 class="card-titlee">{{ job.title }}</h5>
+                <p class="card-textt">Department: {{ job.department }}</p>
+                <p class="card-textt">Vacancy: {{ job.vacancies }}</p>
+                <p class="card-textt">Posted Date: {{ job.postedDate }}</p>
+                <p class="card-textt">Application Deadline: {{ job.applicationDeadline }}</p>
+                <div *ngIf="job.showMore">
+                    <p class="card-textt">Location: {{ job.location }}</p>
+                    <p class="card-textt">Salary Range: {{ job.salaryRange }}</p>
+                    <p class="card-textt">Description: {{ job.description }}</p>
+                    <p class="card-textt">Requirements: {{ job.requirements }}</p>
+                </div>
+                <button (click)="toggleReadMore(job)" class="read-more-btnn">
+                    {{ job.showMore ? 'Read Less' : 'Read More' }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Job Details Popup -->
+<div class="popup" *ngIf="selectedJob">
+    <div class="popup-content">
+        <h2>{{ selectedJob.title }}</h2>
+        <p>{{ selectedJob.description }}</p>
+        <p>Requirements: {{ selectedJob.requirements.join(', ') }}</p>
+        <p>Salary Range: {{ selectedJob.salaryRange }}</p>
+        <button (click)="closeJobDetails()">Close</button>
+    </div>
+</div>
+
+<!-- Candidate Details Popup -->
+<div class="popup" *ngIf="selectedCandidate">
+    <div class="popup-content">
+        <h2>{{ selectedCandidate.name }}</h2>
+        <p>Email: {{ selectedCandidate.email }}</p>
+        <p>Phone: {{ selectedCandidate.phone }}</p>
+        <p>Skills: {{ selectedCandidate.skills.join(', ') }}</p>
+        <p>Experience: {{ selectedCandidate.experience }}</p>
+        <p>Education: {{ selectedCandidate.education }}</p>
+        <button (click)="closeCandidateDetails()">Close</button>
+    </div>
+</div>
+
+<!-- Interviewer Details Popup -->
+<div class="popup" *ngIf="selectedInterviewer">
+    <div class="popup-content">
+        <h2>{{ selectedInterviewer.name }}</h2>
+        <p>Email: {{ selectedInterviewer.email }}</p>
+        <p>Phone: {{ selectedInterviewer.phone }}</p>
+        <p>Position: {{ selectedInterviewer.position }}</p>
+        <p>Grade: {{ selectedInterviewer.grade }}</p>
+        <button (click)="closeInterviewerDetails()">Close</button>
+    </div>
+</div>
