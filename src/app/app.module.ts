@@ -20,6 +20,7 @@ import { InterviewerService } from './services/interviewer.service';
 import { PmoHomeComponent } from './components/pmo-home/pmo-home.component';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './components/login/login.component';
+import { ConfigurablePageComponent } from './components/configurable-page/configurable-page.component';
 
 
 @NgModule({
@@ -31,6 +32,8 @@ import { LoginComponent } from './components/login/login.component';
     SkillManagementComponent,
     CandidateHomeComponent,
     InterviewerHomeComponent,
+    LoginComponent,
+    ConfigurablePageComponent,
     PmoHomeComponent,
     LoginComponent
   ],
