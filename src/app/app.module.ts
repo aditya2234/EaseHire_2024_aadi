@@ -36,6 +36,12 @@ import { AdduserComponent } from './components/adduser/adduser.component';
     CandidateHomeComponent,
     InterviewerHomeComponent,
     LoginComponent,
+    CustomersViewAllComponent,
+    AddCustomerComponent,
+    AdduserComponent,
+    ConfigurablePageComponent,
+    PmoHomeComponent,
+  
     
   ],
   imports: [
