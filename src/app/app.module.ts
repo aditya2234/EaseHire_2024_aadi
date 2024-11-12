@@ -11,12 +11,14 @@ import { SkillManagementComponent } from './components/skill-management/skill-ma
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CandidateHomeComponent } from './components/candidate-home/candidate-home.component';
 import { InterviewerHomeComponent } from './components/interviewer-home/interviewer-home.component';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './components/login/login.component';
+import { CustomersViewAllComponent } from './components/customers-view-all/customers-view-all.component';
+import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { LoginComponent } from './components/login/login.component';
     CandidateHomeComponent,
     InterviewerHomeComponent,
     LoginComponent,
+    CustomersViewAllComponent,
+    AddCustomerComponent
     
   ],
   imports: [
