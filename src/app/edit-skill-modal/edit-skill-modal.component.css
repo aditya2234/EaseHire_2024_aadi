@@ -1,0 +1,36 @@
+/* General button styles */
+.mat-dialog-actions button {
+    margin-left: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, color 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Cancel button styles */
+  .mat-dialog-actions .cancel-button {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    color: white;
+  }
+  
+  .mat-dialog-actions .cancel-button:hover {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    transform: translateY(-2px);
+    color: #ffebee;
+  }
+  
+  /* Save button styles */
+  .mat-dialog-actions .save-button {
+    background: linear-gradient(45deg, #1e90ff, #00bfff);
+    color: white;
+  }
+  
+  .mat-dialog-actions .save-button:hover {
+    background: linear-gradient(45deg, #00bfff, #1e90ff);
+    transform: translateY(-2px);
+    color: #e3f2fd;
+  }
+  

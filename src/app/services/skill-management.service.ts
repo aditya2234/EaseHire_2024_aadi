@@ -17,7 +17,9 @@ export class SkillService {
   }
 
   addSkill(skill: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/addskill`, skill)
+    console.log(skill);
+    
+    return this.http.post<any>(`${this.apiUrl}/addskill/`, skill)
       .pipe(catchError(this.handleError));
   }
 
@@ -26,10 +28,11 @@ export class SkillService {
       .pipe(catchError(this.handleError));
   }
 
-  updateSkill(skill: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/updateskill`, skill)
+  updateSkill(skillId: number, skill: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/updateskill/${skillId}`, skill)
       .pipe(catchError(this.handleError));
   }
+  
   deleteSkill(skillId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/deleteskill/${skillId}`)
       .pipe(catchError(this.handleError));
