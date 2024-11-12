@@ -14,11 +14,10 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    private loginService: LoginService,
-    private router: Router
+    private loginService: LoginService
   ) {
     this.loginForm = this.fb.group({
-      email: ['', Validators.required],
+      email_id: ['', Validators.required],
       password: ['', [Validators.required]]
     });
   }
@@ -28,7 +27,7 @@ export class LoginComponent {
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { email_id, password } = this.loginForm.value;
-      this.loginService.login(email_id, password).subscribe((data) => {
+      this.loginService.login(email_id,password).subscribe((data) => {
         console.log(data);
       });
     }
