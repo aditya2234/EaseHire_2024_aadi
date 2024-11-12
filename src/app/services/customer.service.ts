@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Customer } from '../models/customer';
-import urls from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CustomerService {
-  apiUrl = urls.customerApi;
+  apiUrl = 'https://g50fee11f63aa4c-jkuqq5cm0d4x1svt.adb.ap-mumbai-1.oraclecloudapps.com/ords/rishabh_chowdhury1/customer/customer/';
 
   private customers: Customer[] = [
     {
