@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -16,9 +16,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CandidateHomeComponent } from './components/candidate-home/candidate-home.component';
 import { InterviewerHomeComponent } from './components/interviewer-home/interviewer-home.component';
 import { CandidateService } from './services/candidate.service';
-import { ButtonComponent } from './shared/button/button.component';
+import { InterviewerService } from './services/interviewer.service';
+import { PmoHomeComponent } from './components/pmo-home/pmo-home.component';
 import { SharedModule } from './shared/shared.module';
-import { CardComponent } from './shared/card/card.component';
 import { LoginComponent } from './components/login/login.component';
 import { ConfigurablePageComponent } from './components/configurable-page/configurable-page.component';
 
@@ -34,15 +34,17 @@ import { ConfigurablePageComponent } from './components/configurable-page/config
     InterviewerHomeComponent,
     LoginComponent,
     ConfigurablePageComponent,
-    
+    PmoHomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SharedModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
