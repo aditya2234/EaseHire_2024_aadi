@@ -15,10 +15,12 @@
         </div>
         
         
-        <div class="flex  justify-between  w-auto" *ngIf="isInterviewer && isLoggedIn" >
+        <div class="flex  justify-between  w-auto" >
             <ul class="flex  justify-evenly w-96 ">
-              <li class="px-2 cursor-pointer transition duration-500 hover:underline " *ngFor="let option of navbarOptions.option2 | keyvalue">
-                {{ option.value }}
+              <li class="px-2 cursor-pointer transition duration-500 hover:underline " *ngFor="let link of selectedNavLinks">
+                <a [href]="link.url">
+                    {{ link.name }}
+                </a>
               </li>
             </ul>            
                 <div class="dropdown">
@@ -27,7 +29,7 @@
                     </button>
                     <div class="dropdown-content right-10">
                         <button class="w-full border h-8 hover:bg-slate-900 hover:text-white ">Profile</button>
-                        <button class="w-full border h-8 hover:bg-slate-900 hover:text-white " (click)="isLoggedOut()">LogOut</button>
+                        <!-- <button class="w-full border h-8 hover:bg-slate-900 hover:text-white " (click)="isLoggedOut()">LogOut</button> -->
                     </div>
                 </div> 
             
@@ -49,7 +51,7 @@
                     </button>
                     <div class="dropdown-content right-10">
                         <button class="w-full border h-8 hover:bg-slate-900 hover:text-white" >Profile</button>
-                        <button class="w-full border h-8 hover:bg-slate-900 hover:text-white"  (click)="isLoggedOut()">LogOut</button>
+                        <!-- <button class="w-full border h-8 hover:bg-slate-900 hover:text-white"  (click)="isLoggedOut()">LogOut</button> -->
                     </div>
                 </div> 
             </div>
@@ -71,7 +73,7 @@
                     </button>
                     <div class="dropdown-content">
                         <button class="w-full border h-8 hover:bg-slate-900 hover:text-white" >Profile</button>
-                        <button class="w-full border h-8 hover:bg-slate-900 hover:text-white"  (click)="isLoggedOut()">LogOut</button>
+                        <!-- <button class="w-full border h-8 hover:bg-slate-900 hover:text-white"  (click)="isLoggedOut()">LogOut</button> -->
                     </div>
                 </div> 
             </div>

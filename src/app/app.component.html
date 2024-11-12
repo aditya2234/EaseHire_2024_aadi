@@ -1,7 +1,8 @@
 <app-navbar></app-navbar>
-<app-landingpage></app-landingpage>
+<!-- <app-landingpage></app-landingpage>
 <app-login></app-login>
-<app-adduser></app-adduser>
+<app-adduser></app-adduser> -->
+
 
 <app-modal [isVisible]="isModalVisible">
   <h2>Modal Title</h2>
@@ -9,5 +10,8 @@
   <p>This modal will go disapper in 4 seconds.</p>
 </app-modal>
 
+<router-outlet></router-outlet>
+
 
 <app-alert [duration]="5000">Invalid credentials</app-alert>
+<app-footer></app-footer>
