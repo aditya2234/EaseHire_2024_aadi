@@ -23,6 +23,7 @@ import { AddCustomerComponent } from './components/add-customer/add-customer.com
 import { ConfigurablePageComponent } from './components/configurable-page/configurable-page.component';
 import { SharedModule } from './shared/shared.module';
 import { CustomersViewAllComponent } from './components/customers-view-all/customers-view-all.component';
+import { AdduserComponent } from './components/adduser/adduser.component';
 
 
 @NgModule({
@@ -35,11 +36,6 @@ import { CustomersViewAllComponent } from './components/customers-view-all/custo
     CandidateHomeComponent,
     InterviewerHomeComponent,
     LoginComponent,
-    AddCustomerComponent,
-    ConfigurablePageComponent,
-    CustomersViewAllComponent
-
-
     
   ],
   imports: [
