@@ -20,6 +20,13 @@ import { ButtonComponent } from './shared/button/button.component';
 import { SharedModule } from './shared/shared.module';
 import { CardComponent } from './shared/card/card.component';
 import { LoginComponent } from './components/login/login.component';
+import { EditSkillModalComponent } from './edit-skill-modal/edit-skill-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -32,6 +39,7 @@ import { LoginComponent } from './components/login/login.component';
     CandidateHomeComponent,
     InterviewerHomeComponent,
     LoginComponent,
+    EditSkillModalComponent
     
   ],
   imports: [
@@ -40,7 +48,14 @@ import { LoginComponent } from './components/login/login.component';
     ReactiveFormsModule,
     HttpClientModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    BrowserAnimationsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
