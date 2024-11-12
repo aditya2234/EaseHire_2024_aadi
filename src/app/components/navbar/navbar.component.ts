@@ -46,9 +46,9 @@ export class NavbarComponent {
   //   // }
   // }
 
-  // isLoggedOut(){
-  //   this.isLoggedIn = false
-  // }
+  isLoggedOut(){
+    this.isLoggedIn = false
+  }
 
   
 

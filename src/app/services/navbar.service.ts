@@ -7,9 +7,9 @@ export class NavbarService {
   constructor() {}
   navbar_options = {
     items: [
-      { name: 'Home', url: '/pmo-home' },
-      { name: 'service', url: '/#' },
-      { name: 'contact', url: '/#' },
+      { name: 'Home', url: '/home' },
+      { name: 'Skill-Management', url: '/skill-management' },
+      { name: 'CustomerView', url: '/customer-view' },
       { name: 'Profile', url: '/#' },
     ],
   };
