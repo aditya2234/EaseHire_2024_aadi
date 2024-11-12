@@ -9,7 +9,7 @@
             <p><strong>Email:</strong> {{ customer.email }}</p>
             <p><strong>Address:</strong> {{ customer.address }}</p>
             <p><strong>Employees:</strong> {{ customer.numberOfEmployees }}</p>
-            <!-- <p><strong>Total Projects:</strong> {{ customer.projectsOngoing.length }}</p> -->
+            <p><strong>Total Projects:</strong> {{ customer.projectsOngoing.length }}</p>
             <p><strong>Projects:</strong></p>
             <ul class="list-disc list-inside">
               <li *ngFor="let projectOngoing of customer.projectsOngoing">

@@ -18,11 +18,11 @@ import { InterviewerHomeComponent } from './components/interviewer-home/intervie
 import { CandidateService } from './services/candidate.service';
 import { InterviewerService } from './services/interviewer.service';
 import { PmoHomeComponent } from './components/pmo-home/pmo-home.component';
-import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './components/login/login.component';
-import { CustomersViewAllComponent } from './components/customers-view-all/customers-view-all.component';
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 import { ConfigurablePageComponent } from './components/configurable-page/configurable-page.component';
+import { SharedModule } from './shared/shared.module';
+import { CustomersViewAllComponent } from './components/customers-view-all/customers-view-all.component';
 
 
 @NgModule({
@@ -35,6 +35,11 @@ import { ConfigurablePageComponent } from './components/configurable-page/config
     CandidateHomeComponent,
     InterviewerHomeComponent,
     LoginComponent,
+    AddCustomerComponent,
+    ConfigurablePageComponent,
+    CustomersViewAllComponent
+
+
     
   ],
   imports: [
@@ -44,7 +49,7 @@ import { ConfigurablePageComponent } from './components/configurable-page/config
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
