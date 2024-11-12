@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CandidateService } from '../../services/candidate.service';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-candidate-home',
@@ -8,8 +9,12 @@ import { CandidateService } from '../../services/candidate.service';
 })
 export class CandidateHomeComponent implements OnInit {
   job_description: any[] = [];
-
-  constructor(private candidate_service: CandidateService) {}
+  pending:boolean=false;
+  message:string='';
+  status:string='';
+  constructor(private candidate_service: CandidateService) {
+   
+  }
 
   ngOnInit(): void {
     this.getAllJob();
@@ -26,4 +31,17 @@ export class CandidateHomeComponent implements OnInit {
   toggleReadMore(job: any) {
     job.showMore = !job.showMore;
   }
+
+  state(){
+    if(this.pending===false){
+    this.pending=true;
+    this.status="Status-Pending";
+    this.message = '';
+    }
+    else{
+      this.status="";
+       this.message="You already applied"
+    }
+  }
+
 }

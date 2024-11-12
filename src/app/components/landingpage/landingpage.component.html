@@ -143,3 +143,16 @@
       </div>
   </div>
 </div>
+
+<!-- FAQ Section -->
+<div class="bg-gray-100 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl text-center">Frequently Asked Questions</h2>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div *ngFor="let faq of faqs" class="faq-card bg-white p-6 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105" [@fadeInOut]>
+              <h3 class="text-lg font-medium text-gray-900">{{ faq.question }}</h3>
+              <p class="mt-2 text-base text-gray-700">{{ faq.answer }}</p>
+          </div>
+      </div>
+  </div>
+</div>

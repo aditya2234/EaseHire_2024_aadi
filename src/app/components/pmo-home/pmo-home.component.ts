@@ -1,29 +1,70 @@
 import { Component, OnInit } from '@angular/core';
 import { InterviewerService } from '../../services/interviewer.service';
+import { CandidateService } from '../../services/candidate.service';
 
 @Component({
-  selector: 'app-interviewer-home',
-  templateUrl: './interviewer-home.component.html',
-  styleUrls: ['./interviewer-home.component.css']
+  selector: 'app-pmo-home',
+  templateUrl: './pmo-home.component.html',
+  styleUrls: ['./pmo-home.component.css']
 })
-export class InterviewerHomeComponent implements OnInit {
-  jobs: any = [];
-  candidates: any = [];
-  schedules: any = [];
+export class PmoHomeComponent implements OnInit {
   selectedInterviewer: any = null;
   selectedJob: any = null;
   selectedCandidate: any = null;
+  schedules: any = [];
+  job_description: any = [];
 
-  constructor(private interviewService: InterviewerService) {}
+  constructor(private interviewerService: InterviewerService, private candidate_service:CandidateService) {}
 
   ngOnInit(): void {
     this.getAllSchedule();
+    this.getAllJob();
   }
 
   getAllSchedule() {
-    this.schedules = this.interviewService.getAllScheduleInterview();
+    this.schedules = this.interviewerService.getAllScheduleInterview();
     this.sortSchedules();
     console.log("schedules", JSON.stringify(this.schedules));
+  }
+
+  getAllJob() {
+    this.job_description = this.candidate_service.getAllJobs().map(job => ({
+      ...job,
+      showMore: false
+    }));
+    console.log(this.job_description);
+  }
+
+  showJobDetails(job: any) {
+    this.selectedJob = job;
+  }
+
+  closeJobDetails() {
+    this.selectedJob = null;
+  }
+
+  showCandidateDetails(candidate: any) {
+    this.selectedCandidate = candidate;
+  }
+
+  closeCandidateDetails() {
+    this.selectedCandidate = null;
+  }
+
+  showInterviewer(interviewer: any) {
+    this.selectedInterviewer = interviewer;
+  }
+
+  closeInterviewerDetails() {
+    this.selectedInterviewer = null;
+  }
+
+  toggleReadMore(job: any) {
+    job.showMore = !job.showMore;
+  }
+
+  invite(schedule: any) {
+    console.log('Inviting for schedule:', schedule);
   }
 
   sortSchedules() {
@@ -88,32 +129,4 @@ export class InterviewerHomeComponent implements OnInit {
     return `${day}-${month}-${year}`;
   }
 
-  showJobDetails(job: any) {
-    this.selectedJob = job;
-  }
-
-  closeJobDetails() {
-    this.selectedJob = null;
-  }
-
-  showCandidateDetails(candidate: any) {
-    this.selectedCandidate = candidate;
-  }
-
-  closeCandidateDetails() {
-    this.selectedCandidate = null;
-  }
-
-  showInterviewer(interviewer: any) {
-    this.selectedInterviewer = interviewer;
-  }
-
-  closeInterviewerDetails() {
-    this.selectedInterviewer = null;
-  }
-
-  invite(schedule: any) {
-    // Implement your invite logic here
-    console.log('Inviting for schedule:', schedule);
-  }
 }

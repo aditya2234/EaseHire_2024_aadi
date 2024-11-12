@@ -1,0 +1,280 @@
+{
+  "scheduleInterviews": [
+      {
+          "date": "10-11-2024",
+          "time": "10:30 AM",
+          "job": {
+              "title": "Financial Analyst",
+              "description": "Analyze financial data and provide insights to support business decisions.",
+              "requirements": [
+                  "Bachelor's degree in Finance or related field",
+                  "3+ years of experience in financial analysis",
+                  "Proficiency in Excel and financial modeling",
+                  "Strong analytical and problem-solving skills"
+              ],
+              "salaryRange": "$80,000 - $95,000"
+          },
+          "candidate": {
+              "name": "Ram",
+              "email": "ram@example.com",
+              "phone": "123-456-7890",
+              "skills": ["Data Science", "Machine Learning"],
+              "experience": "5 years",
+              "education": "M.Sc. in Data Science"
+          },
+          "interviewer": {
+              "name": "John Doe",
+              "email": "john.doe@example.com",
+              "phone": "987-654-3210",
+              "position": "Senior Financial Analyst",
+              "grade": "Level 3"
+          }
+      },
+      {
+          "date": "10-11-2024",
+          "time": "11:00 AM",
+          "job": {
+              "title": "Marketing Specialist",
+              "description": "Develop and implement marketing strategies to increase brand awareness.",
+              "requirements": [
+                  "Bachelor's degree in Marketing or related field",
+                  "3+ years of experience in marketing",
+                  "Proficiency in digital marketing tools",
+                  "Excellent communication skills"
+              ],
+              "salaryRange": "$70,000 - $85,000"
+          },
+          "candidate": {
+              "name": "Shyam",
+              "email": "shyam@example.com",
+              "phone": "234-567-8901",
+              "skills": ["Web Development", "JavaScript", "React"],
+              "experience": "3 years",
+              "education": "B.Sc. in Computer Science"
+          },
+          "interviewer": {
+              "name": "Jane Smith",
+              "email": "jane.smith@example.com",
+              "phone": "876-543-2109",
+              "position": "Marketing Manager",
+              "grade": "Level 4"
+          }
+      },
+      {
+          "date": "12-11-2024",
+          "time": "09:00 AM",
+          "job": {
+              "title": "IT Support Specialist",
+              "description": "Provide technical support and troubleshoot IT issues for employees.",
+              "requirements": [
+                  "2+ years of experience in IT support",
+                  "Proficiency in Windows and Mac OS",
+                  "Strong problem-solving skills",
+                  "Excellent communication skills"
+              ],
+              "salaryRange": "$55,000 - $70,000"
+          },
+          "candidate": {
+              "name": "Sita",
+              "email": "sita@example.com",
+              "phone": "345-678-9012",
+              "skills": ["Cyber Security", "Network Security"],
+              "experience": "4 years",
+              "education": "M.Sc. in Cyber Security"
+          },
+          "interviewer": {
+              "name": "Alice Johnson",
+              "email": "alice.johnson@example.com",
+              "phone": "765-432-1098",
+              "position": "IT Manager",
+              "grade": "Level 5"
+          }
+      },
+      {
+          "date": "13-11-2024",
+          "time": "02:00 PM",
+          "job": {
+              "title": "Senior Software Developer",
+              "description": "Lead our backend team, design scalable systems, and mentor junior developers.",
+              "requirements": [
+                  "5+ years of experience in software development",
+                  "Expertise in Java, Spring Boot, and microservices architecture",
+                  "Strong leadership and communication skills",
+                  "Experience with cloud platforms like AWS or Azure"
+              ],
+              "salaryRange": "$120,000 - $140,000"
+          },
+          "candidate": {
+              "name": "Gita",
+              "email": "gita@example.com",
+              "phone": "456-789-0123",
+              "skills": ["AI Research", "Python", "TensorFlow"],
+              "experience": "6 years",
+              "education": "Ph.D. in Artificial Intelligence"
+          },
+          "interviewer": {
+              "name": "Bob Brown",
+              "email": "bob.brown@example.com",
+              "phone": "654-321-0987",
+              "position": "Lead Software Engineer",
+              "grade": "Level 2"
+          }
+      },
+      {
+          "date": "14-11-2024",
+          "time": "03:00 PM",
+          "job": {
+              "title": "Financial Analyst",
+              "description": "Analyze financial data and provide insights to support business decisions.",
+              "requirements": [
+                  "Bachelor's degree in Finance or related field",
+                  "3+ years of experience in financial analysis",
+                  "Proficiency in Excel and financial modeling",
+                  "Strong analytical and problem-solving skills"
+              ],
+              "salaryRange": "$80,000 - $95,000"
+          },
+          "candidate": {
+              "name": "Hari",
+              "email": "hari@example.com",
+              "phone": "567-890-1234",
+              "skills": ["Machine Learning", "Data Analysis"],
+              "experience": "2 years",
+              "education": "B.Sc. in Data Science"
+          },
+          "interviewer": {
+              "name": "Charlie Davis",
+              "email": "charlie.davis@example.com",
+              "phone": "543-210-9876",
+              "position": "Finance Manager",
+              "grade": "Level 1"
+          }
+      },
+      {
+          "date": "15-11-2024",
+          "time": "01:00 PM",
+          "job": {
+              "title": "DevOps Engineer",
+              "description": "Implement and manage CI/CD pipelines and ensure system reliability.",
+              "requirements": [
+                  "3+ years of experience in DevOps",
+                  "Proficiency in Docker, Kubernetes, and Jenkins",
+                  "Experience with cloud platforms like AWS or Azure",
+                  "Strong scripting skills"
+              ],
+              "salaryRange": "$110,000 - $130,000"
+          },
+          "candidate": {
+              "name": "Krishna",
+              "email": "krishna@example.com",
+              "phone": "678-901-2345",
+              "skills": ["Cloud Computing", "AWS", "Azure"],
+              "experience": "5 years",
+              "education": "M.Sc. in Cloud Computing"
+          },
+          "interviewer": {
+              "name": "Diana Evans",
+              "email": "diana.evans@example.com",
+              "phone": "432-109-8765",
+              "position": "DevOps Lead",
+              "grade": "Level 2"
+          }
+      },
+      {
+          "date": "16-11-2024",
+          "time": "11:00 AM",
+          "job": {
+              "title": "DevOps Engineer",
+              "description": "Implement and manage CI/CD pipelines and ensure system reliability.",
+              "requirements": [
+                  "3+ years of experience in DevOps",
+                  "Proficiency in Docker, Kubernetes, and Jenkins",
+                  "Experience with cloud platforms like AWS or Azure",
+                  "Strong scripting skills"
+              ],
+              "salaryRange": "$110,000 - $130,000"
+          },
+          "candidate": {
+              "name": "Radha",
+              "email": "radha@example.com",
+              "phone": "789-012-3456",
+              "skills": ["DevOps", "Docker", "Kubernetes"],
+              "experience": "4 years",
+              "education": "B.Sc. in Information Technology"
+          },
+          "interviewer": {
+              "name": "Ethan Foster",
+              "email": "ethan.foster@example.com",
+              "phone": "321-098-7654",
+              "position": "Senior DevOps Engineer",
+              "grade": "Level 4"
+          }
+      },
+      {
+          "date": "17-11-2024",
+          "time": "10:00 AM",
+          "job": {
+              "title": "Senior Software Developer",
+              "description": "Lead our backend team, design scalable systems, and mentor junior developers.",
+              "requirements": [
+                  "5+ years of experience in software development",
+                  "Expertise in Java, Spring Boot, and microservices architecture",
+                  "Strong leadership and communication skills",
+                  "Experience with cloud platforms like AWS or Azure",
+                  "Proficiency in database technologies such as SQL and NoSQL",
+                  "Experience with CI/CD pipelines and DevOps practices",
+                  "Knowledge of containerization technologies like Docker and Kubernetes",
+                  "Familiarity with front-end technologies such as HTML, CSS, and JavaScript",
+                  "Ability to troubleshoot and optimize performance issues",
+                  "Strong understanding of software development lifecycle and agile methodologies"
+              ],
+              "salaryRange": "$120,000 - $140,000"
+          },
+          "candidate": {
+              "name": "Lakshmi",
+              "email": "lakshmi@example.com",
+              "phone": "890-123-4567",
+              "skills": ["Blockchain", "Cryptography"],
+              "experience": "3 years",
+              "education": "M.Sc. in Computer Science"
+          },
+          "interviewer": {
+              "name": "Fiona Green",
+              "email": "fiona.green@example.com",
+              "phone": "210-987-6543",
+              "position": "Software Development Manager",
+              "grade": "Level 3"
+          }
+      },
+      {
+        "date": "18-11-2024",
+        "time": "09:00 AM",
+        "job": {
+            "title": "Financial Analyst",
+            "description": "Analyze financial data and provide insights to support business decisions.",
+            "requirements": [
+                "Bachelor's degree in Finance or related field",
+                "3+ years of experience in financial analysis",
+                "Proficiency in Excel and financial modeling",
+                "Strong analytical and problem-solving skills"
+            ],
+            "salaryRange": "$80,000 - $95,000"
+        },
+        "candidate": {
+            "name": "Hari",
+            "email": "hari@example.com",
+            "phone": "567-890-1234",
+            "skills": ["Machine Learning", "Data Analysis"],
+            "experience": "2 years",
+            "education": "B.Sc. in Data Science"
+        },
+        "interviewer": {
+            "name": "Grace Hall",
+            "email": "grace.hall@example.com",
+            "phone": "109-876-5432",
+            "position": "Senior Financial Analyst",
+            "grade": "Level 1"
+        }
+    }
+]
+}
