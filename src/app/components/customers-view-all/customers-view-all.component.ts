@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Customer } from '../../models/customer';
 import { CustomerService } from '../../services/customer.service';
 
-
 @Component({
   selector: 'app-customers-view-all',
   templateUrl: './customers-view-all.component.html',
-  styleUrl: './customers-view-all.component.css'
+  styleUrl: './customers-view-all.component.css',
+  
 })
 export class CustomersViewAllComponent {
   customers: Customer[] = [];
