@@ -31,8 +31,9 @@ export class LoginComponent {
       this.loginService.login(email_id,password).subscribe((data) => {
         console.log(data);
         localStorage.setItem('role_id', JSON.stringify(data.ROLE_ID));
+        localStorage.setItem('user_name', JSON.stringify(data.FIRST_NAME));
         this.router.navigate(['/home']);
-        window.location.reload();
+        // window.location.reload();
       });
     }
   }

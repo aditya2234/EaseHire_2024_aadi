@@ -3,7 +3,7 @@
         
 
 
-        <div  *ngIf = "!isLoggedIn">
+        <div  *ngIf="isLoggedIn===false">
           <ul class="navbar-nav flex justify-evenly w-60">
             <li class="nav-item ">
               <a class="nav-link border border-black p-3 rounded hover:bg-slate-900 hover:text-white" href="#" routerLink="/login">Sign In </a>
@@ -14,8 +14,8 @@
           </ul>
         </div>
         
-        
-        <div class="flex  justify-between  w-auto" *ngIf="isLoggedIn">
+<!--         
+        <div class="flex  justify-between  w-auto" *ngIf="isInterviewee && isLoggedIn">
             <ul class="flex  justify-evenly w-96 ">
               <li class="px-2 cursor-pointer transition duration-500 hover:underline " *ngFor="let link of selectedNavLinks">
                 <a [href]="link.url">
@@ -23,34 +23,36 @@
                 </a>
               </li>
             </ul>            
-                <!-- <div class="dropdown">
-                    <button class="dropbtn px-5">Candidate
+                <div class="dropdown">
+                    <button class="dropbtn px-5">Interviewer
                     <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content right-10">
                         <button class="w-full border h-8 hover:bg-slate-900 hover:text-white ">Profile</button>
                         <button class="w-full border h-8 hover:bg-slate-900 hover:text-white " (click)="isLoggedOut()">LogOut</button>
                     </div>
-                </div>  -->
+                </div> 
             
         </div>   
+ -->
 
 
-
-        <div class="flex j justify-between  w-auto" *ngIf="isInterviewee && isLoggedIn" >
+        <div class="flex j justify-between  w-auto" *ngIf=" isLoggedIn" >
             <ul class="flex  justify-evenly w-96 ">
-                <li class="px-2 cursor-pointer transition duration-500 hover:underline " *ngFor="let option of navbarOptions.option1 | keyvalue">
-                    {{ option.value }}
-                </li>
+                <li class="px-2 cursor-pointer transition duration-500 hover:underline " *ngFor="let link of selectedNavLinks">
+                    <a [href]="link.page_url">
+                        {{ link.page_name }}
+                    </a>
+                  </li>
             </ul>
 
             <div>
                 <div class="dropdown">
-                    <button class="dropbtn px-5">Interviewee 
+                    <button class="dropbtn px-5">{{userName}}
                     <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content right-10">
-                        <button class="w-full border h-8 hover:bg-slate-900 hover:text-white" >Profile</button>
+                        <button class="w-full border h-8 hover:bg-slate-900 hover:text-white">Profile</button>
                         <button class="w-full border h-8 hover:bg-slate-900 hover:text-white"  (click)="isLoggedOut()">LogOut</button>
                     </div>
                 </div> 
@@ -59,7 +61,7 @@
 
 
 
-        <div class="flex j justify-between  w-auto" *ngIf="isAdmin && isLoggedIn" >
+        <!-- <div class="flex j justify-between  w-auto" *ngIf="isAdmin && isLoggedIn" >
             <ul class="flex  justify-evenly w-96 ">
                 <li class="px-2 cursor-pointer transition duration-500 hover:underline " *ngFor="let option of navbarOptions.option3 | keyvalue">
                     {{ option.value }}
@@ -77,6 +79,6 @@
                     </div>
                 </div> 
             </div>
-        </div>
+        </div> -->
         
     </nav>
