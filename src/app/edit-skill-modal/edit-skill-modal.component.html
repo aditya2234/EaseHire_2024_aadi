@@ -1,11 +1,11 @@
 <h2 mat-dialog-title>Edit Skill</h2>
-<mat-dialog-content>
-  <form [formGroup]="skillForm">
-    <mat-form-field>
+<mat-dialog-content class="skill-dialog-content">
+  <form [formGroup]="skillForm" class="skill-form">
+    <mat-form-field appearance="fill">
       <mat-label>Skill Name</mat-label>
       <input matInput formControlName="skill_name">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field appearance="fill">
       <mat-label>Skill Type</mat-label>
       <mat-select formControlName="skill_type">
         <mat-option value="Technical">Technical</mat-option>
@@ -15,8 +15,7 @@
     </mat-form-field>
   </form>
 </mat-dialog-content>
-<mat-dialog-actions>
-    <button mat-button class="cancel-button" (click)="onCancel()">Cancel</button>
-    <button mat-button class="save-button" (click)="onSave()">Save</button>
-  </mat-dialog-actions>
-  
+<mat-dialog-actions align="end" class="skill-dialog-actions">
+  <button mat-button class="cancel-button" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" class="save-button" (click)="onSave()">Save</button>
+</mat-dialog-actions>

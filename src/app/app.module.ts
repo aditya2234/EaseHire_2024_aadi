@@ -61,8 +61,8 @@ import { AdduserComponent } from './components/adduser/adduser.component';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatButtonModule,
-    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
