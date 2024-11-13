@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class CustomerService {
-  apiUrl = 'https://g50fee11f63aa4c-jkuqq5cm0d4x1svt.adb.ap-mumbai-1.oraclecloudapps.com/ords/rishabh_chowdhury1/customer/customer/';
+  apiUrl =
+    'https://g50fee11f63aa4c-jkuqq5cm0d4x1svt.adb.ap-mumbai-1.oraclecloudapps.com/ords/rishabh_chowdhury1/customer/customer/';
 
   private customers: Customer[] = [
     {
@@ -41,26 +42,22 @@ export class CustomerService {
   constructor(private https: HttpClient) {}
 
   getCustomers(): Observable<any> {
-
     return this.https.get(this.apiUrl);
   }
 
   addCustomer(customer: Customer): Observable<Customer> {
-    console.log('service mein aaya')
+    console.log('service mein aaya');
     return this.https.post<Customer>(this.apiUrl, customer);
-    
   }
 
-  updateCustomer(customer: Customer): Observable<Customer> {
-    const index = this.customers.findIndex((c) => c.id === customer.id);
-    if (index !== -1) {
-      this.customers[index] = customer;
-    }
-    return of(customer);
+  updateCustomer(id: number, customer: Customer): Observable<any> {
+    return this.https.put(`https://g50fee11f63aa4c-jkuqq5cm0d4x1svt.adb.ap-mumbai-1.oraclecloudapps.com/ords/rishabh_chowdhury1/customer/${id}`, customer);
   }
 
-  deleteCustomer(id: number): Observable<number> {
-    this.customers = this.customers.filter((c) => c.id !== id);
-    return of(id);
+  deleteCustomer(id: number): any {
+    return this.https.delete(
+      'https://g50fee11f63aa4c-jkuqq5cm0d4x1svt.adb.ap-mumbai-1.oraclecloudapps.com/ords/rishabh_chowdhury1/customer/' +
+        id
+    );
   }
 }
