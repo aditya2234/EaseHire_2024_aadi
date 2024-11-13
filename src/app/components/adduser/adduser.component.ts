@@ -33,6 +33,7 @@ export class AdduserComponent {
         console.log(this.userForm.value);
       }, error => {
         console.error('Error adding user', error);
+        this.successMessage = 'Error! Fill details properly';
       });
     }
   }
