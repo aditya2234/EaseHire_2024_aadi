@@ -1,0 +1,89 @@
+<p>candidate-onboarding works!</p>
+
+<app-save-button (click)="addCandidates()">Add Candidate</app-save-button>&nbsp;&nbsp;&nbsp;
+<app-save-button (click)="showCandidates()">View Candidates</app-save-button>
+
+<!-- Form for post -->
+<div class="postOnboardingMain"  *ngIf="addCandidate" >
+  <div>
+    <h2>Add Candidate</h2>
+  </div>
+    <form class="max-w-sm mx-auto brdr form-container" [formGroup]="candidateForm" (ngSubmit)="saveCandidate()">
+        <div class="mb-5">
+        <label for="p_first_name"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First_Name:</label>
+       <input type="text" id="p_first_name" formControlName="firstname"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+
+        <label for="p_last_name"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last_Name:</label>
+        <input type="text" id="p_last_name" formControlName="lastname"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+
+        <label for="p_email"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email:</label>
+        <input type="email" id="p_email" formControlName="email"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+
+        <label for="p_phoneno"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number:</label>
+        <input type="text" id="p_phoneno" formControlName="phoneno"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+
+      <!-- //Button -->
+        <app-save-button type="submit">Submit</app-save-button>
+    </div>
+    </form>
+</div>
+
+<!-- For displaying all candidates -->
+<div class="getOnboardingMain" *ngIf="showCandidate">
+    <div class="getOnboarding">
+        <h2>Candidate details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Mobile Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let candidate of candidates; let i = index">
+                    <td>{{i + 1}}</td> <!-- Serial number -->
+                    <td>{{candidate.candidateid}}</td>
+                    <td>{{candidate.firstname}}</td>
+                    <td>{{candidate.lastname}}</td>
+                    <td>{{candidate.email}}</td>
+                    <td>{{candidate.phoneno}}</td>
+                    <td>
+                        <button (click)="deleteCandidate(candidate.candidateid)">Delete</button>&nbsp;&nbsp;
+                        <button (click)="editCandidate(candidate.candidateid)" class="editbtn">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<!-- Edit form for editing form -->
+<div *ngIf="updateCandidate">
+    <h2>Edit Candidate</h2>
+    <form class="max-w-sm mx-auto brdr form-container"[formGroup]="editCandidateForm" (ngSubmit)="updateCandidates()">
+      <div>
+        <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name:</label>
+        <input id="firstname" formControlName="firstname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      </div>
+      <div>
+        <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name:</label>
+        <input id="lastname" formControlName="lastname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      </div>
+      <div>
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email:</label>
+        <input id="email" formControlName="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      </div>
+      <div>
+        <label for="phoneno" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number:</label>
+        <input id="phoneno" formControlName="phoneno" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      </div><br>
+      <button type="submit"   [disabled]="editCandidateForm.invalid" class="editbtn">Update</button>
+    </form>
+  </div>

@@ -20,6 +20,7 @@ import { InterviewerService } from './services/interviewer.service';
 import { PmoHomeComponent } from './components/pmo-home/pmo-home.component';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './components/login/login.component';
+import { CandidateOnboardingComponent } from './components/candidate-onboarding/candidate-onboarding.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { LoginComponent } from './components/login/login.component';
     CandidateHomeComponent,
     InterviewerHomeComponent,
     PmoHomeComponent,
-    LoginComponent
+    LoginComponent,
+    CandidateOnboardingComponent
   ],
   imports: [
     BrowserModule,
