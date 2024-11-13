@@ -105,5 +105,12 @@
   },
   "cli": {
     "analytics": false
+  },
+  "architect": {
+  "serve": {
+    "options": {
+      "proxyConfig": "src/app/proxy.conf.json"
+    }
   }
+}
 }

@@ -14,7 +14,8 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    private loginService: LoginService
+    private loginService: LoginService,
+    private router:Router
   ) {
     this.loginForm = this.fb.group({
       email_id: ['', Validators.required],
@@ -30,6 +31,8 @@ export class LoginComponent {
       this.loginService.login(email_id,password).subscribe((data) => {
         console.log(data);
         localStorage.setItem('role_id', JSON.stringify(data.ROLE_ID));
+        this.router.navigate(['/home']);
+        window.location.reload();
       });
     }
   }

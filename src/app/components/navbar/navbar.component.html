@@ -1,4 +1,4 @@
-     <nav class="navbar fixed z-10 w-full px-6 py-4 bg-white bg-opacity-90 rounded-lg shadow-md flex justify-between items-center ">
+     <nav class="navbar sticky top-0 z-10 w-full px-6 py-4 bg-white bg-opacity-90 rounded-lg shadow-md flex justify-between items-center ">
         <a class="navbar-brand flex items-center gap-x-2 justify-center" href="#"> <h2 class="title text-3xl">EaseHire</h2> <h3>(Logo)</h3> </a>
         
 
@@ -6,22 +6,24 @@
         <div  *ngIf = "!isLoggedIn">
           <ul class="navbar-nav flex justify-evenly w-60">
             <li class="nav-item ">
-              <a class="nav-link border border-black p-3 rounded hover:bg-slate-900 hover:text-white" href="#">Sign In </a>
+              <a class="nav-link border border-black p-3 rounded hover:bg-slate-900 hover:text-white" href="#" routerLink="/login">Sign In </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link border border-black p-3 rounded hover:bg-slate-900 hover:text-white" href="#">Sign up</a>
+              <a class="nav-link border border-black p-3 rounded hover:bg-slate-900 hover:text-white" href="#" routerLink="/register">Sign up</a>
             </li>            
           </ul>
         </div>
         
         
-        <div class="flex  justify-between  w-auto" *ngIf="isInterviewer && isLoggedIn" >
+        <div class="flex  justify-between  w-auto" *ngIf="isLoggedIn">
             <ul class="flex  justify-evenly w-96 ">
-              <li class="px-2 cursor-pointer transition duration-500 hover:underline " *ngFor="let option of navbarOptions.option2 | keyvalue">
-                {{ option.value }}
+              <li class="px-2 cursor-pointer transition duration-500 hover:underline " *ngFor="let link of selectedNavLinks">
+                <a [href]="link.url">
+                    {{ link.name }}
+                </a>
               </li>
             </ul>            
-                <div class="dropdown">
+                <!-- <div class="dropdown">
                     <button class="dropbtn px-5">Candidate
                     <i class="fa fa-caret-down"></i>
                     </button>
@@ -29,7 +31,7 @@
                         <button class="w-full border h-8 hover:bg-slate-900 hover:text-white ">Profile</button>
                         <button class="w-full border h-8 hover:bg-slate-900 hover:text-white " (click)="isLoggedOut()">LogOut</button>
                     </div>
-                </div> 
+                </div>  -->
             
         </div>   
 
