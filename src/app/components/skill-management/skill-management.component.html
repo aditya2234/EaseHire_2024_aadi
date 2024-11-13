@@ -1,36 +1,35 @@
 <div class="max-w-2xl mx-auto p-4">
-    <h2 class="text-2xl font-bold mb-4">Skill Management</h2>
-    <form [formGroup]="skillForm" (ngSubmit)="onSubmit()" class="space-y-4">
-      <div>
-        <label for="skillName" class="block text-sm font-medium text-gray-700">Skill Name:</label>
-        <input id="skillName" formControlName="SKILL_NAME" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-      </div>
-      
-      <div>
-        <label for="skillType" class="block text-sm font-medium text-gray-700">Skill Type:</label>
-        <input id="skillType" formControlName="SKILL_TYPE" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-      </div>
-      
-      <div>
-        <label for="description" class="block text-sm font-medium text-gray-700">Description:</label>
-        <textarea id="description" formControlName="DESCRIPTION" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
-      </div>
-      
-      <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add Skill</button>
-    </form>
-  
-    <ul class="mt-8 space-y-4">
-      <li *ngFor="let skill of skills" class="p-4 border border-gray-300 rounded-md shadow-sm">
-        <div class="flex justify-between items-center">
-          <div>
-            <h3 class="text-lg font-medium">{{ skill.SKILL_NAME }} ({{ skill.SKILL_TYPE }})</h3>
-          </div>
-          <div class="space-x-2">
-            <app-edit-button (click)="editSkill(skill)">Edit</app-edit-button>
-            <app-delete-button (click)="deleteSkill(skill.SKILL_ID)">Delete</app-delete-button>
-          </div>
+  <h2 class="text-2xl font-bold mb-4">Skill Management</h2>
+  <form [formGroup]="skillForm" (ngSubmit)="onSubmit()" class="space-y-4">
+    <div>
+      <label for="skillName" class="block text-sm font-medium text-gray-700">Skill Name:</label>
+      <input id="skillName" formControlName="skill_name" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+    </div>
+    
+    <div>
+      <label for="skillType" class="block text-sm font-medium text-gray-700">Skill Type:</label>
+      <select id="skillType" formControlName="skill_type" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+        <option value="">Select</option>
+        <option value="Technical">Technical</option>
+        <option value="Soft">Soft</option>
+        <option value="Management">Management</option>
+      </select>
+    </div>
+    
+    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Add Skill</button>
+  </form>
+
+  <ul class="mt-8 space-y-4">
+    <li *ngFor="let skill of skills" class="p-4 border border-gray-300 rounded-md shadow-sm">
+      <div class="flex justify-between items-center">
+        <div>
+          <h3 class="text-lg font-medium">{{ skill.skill_name }}</h3>
         </div>
-      </li>
-    </ul>
-  </div>
-  
+        <div class="space-x-2">
+          <button mat-button class="edit-button" (click)="editSkill(skill.skill_id)">Edit</button>
+          <button mat-button class="remove-button" (click)="deleteSkill(skill.skill_id)">Remove</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

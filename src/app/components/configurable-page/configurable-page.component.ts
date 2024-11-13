@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ConfigurablePageService } from '../../services/configurable-page.service';
+import { NavbarService } from '../../services/navbar.service';
 
 @Component({
   selector: 'app-configurable-page',
@@ -9,7 +10,7 @@ import { ConfigurablePageService } from '../../services/configurable-page.servic
 export class ConfigurablePageComponent {
   roles:any=[]
 
-  constructor(private configurableService:ConfigurablePageService){
+  constructor(private configurableService:ConfigurablePageService , private navbarServce:NavbarService){
 
   }
 
@@ -23,6 +24,10 @@ export class ConfigurablePageComponent {
       console.log(data); 
       this.roles = data.items || data; 
     });
+  }
+
+  getAllNavbarOptions():void{
+    this.navbarServce.navbar_options
   }
 
 }
