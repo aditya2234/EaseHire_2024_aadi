@@ -1,37 +1,28 @@
-<div class="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-    <!-- Content above the login form -->
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl mb-6">
-      <h1 class="text-3xl font-bold mb-4">Welcome to HireEase</h1>
-      <p class="text-gray-700 mb-4">
-        HireEase is your go-to platform for scheduling interviews and finding the right interviewer within your company. Streamline your hiring process and ensure you have the best candidates meeting the best interviewers.
-      </p>
-      <p class="text-gray-700">
-        Whether you're a hiring manager looking to schedule interviews or an interviewer ready to assess candidates, HireEase makes the process seamless and efficient.
-      </p>
-    </div>
-  
-    <!-- Login form -->
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-      <h2 class="text-2xl font-bold mb-6 text-center">Login to HireEase</h2>
-      <form (ngSubmit)="onSubmit()">
-        <div class="mb-4">
-          <label for="username" class="block text-gray-700">Username</label>
-          <input type="text" id="username" [(ngModel)]="username" name="username" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
-        </div>
-        <div class="mb-6">
-          <label for="password" class="block text-gray-700">Password</label>
-          <input type="password" id="password" [(ngModel)]="password" name="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
-        </div>
-        <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Login</button>
-      </form>
-      <p class="mt-4 text-center text-gray-600">New to HireEase? <a href="/signup" class="text-indigo-600 hover:underline">Sign up</a></p>
-    </div>
-  
-    <!-- Content below the login form -->
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl mt-6">
-      <p class="text-gray-700">
-        Join HireEase today and experience a streamlined interview scheduling process. Our platform ensures that the right candidates meet the right interviewers, making your hiring process more efficient and effective.
-      </p>
-    </div>
+<div class="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
+  <!-- Welcome Content -->
+  <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-2xl mb-6">
+    <h1 class="text-4xl font-bold mb-4 text-center">Welcome to EaseHire</h1>
+    <p class="text-gray-300 mb-4">
+      EaseHire is your go-to platform for scheduling interviews and finding the right interviewer within your company. Streamline your hiring process and ensure you have the best candidates meeting the best interviewers.
+    </p>
+    <p class="text-gray-300">
+      Whether you're a hiring manager looking to schedule interviews or an interviewer ready to assess candidates, EaseHire makes the process seamless and efficient.
+    </p>
   </div>
   
+  <!-- Login Form -->
+  <div class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md animate-fadeIn">
+    <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label for="email" class="block text-gray-400">Email Id</label>
+        <input type="text" id="email" formControlName="email_id" class="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black" required>
+      </div>
+      <div class="mb-6">
+        <label for="password" class="block text-gray-400">Password</label>
+        <input type="password" id="password" formControlName="password" class="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm text-black" required>
+      </div>
+      <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Login</button>
+    </form>
+  </div>
+</div>

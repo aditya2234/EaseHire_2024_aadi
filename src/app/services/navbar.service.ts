@@ -1,31 +1,21 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NavbarService {
-
-
-  constructor() { }
+  constructor() {}
   navbar_options = {
-    option1: {
-      home: "Home",
-      assessment: "Assessment",
-      interview: "Interview",
-      schedule: "Schedule"
-    },
-    option2: {
-      home: "Home",
-      marks: "Marks",
-      assessment: "Assessment",
-      schedule: "Schedule"
-    },
-    option3:{
-      candidate:"Candidate",
-      interviewer:"Interviewer",
-      
-    }
+    items: [
+      { name: 'Home', url: '/home' },
+      { name: 'Skill-Management', url: '/skill-management' },
+      { name: 'CustomerView', url: '/customer-view' },
+      { name: 'Profile', url: '/#' },
+    ],
   };
+
+  getNavLinks(roleId:number){
+    //http req mein role id jayega
+    return this.navbar_options;
+  }
 }
-
-
