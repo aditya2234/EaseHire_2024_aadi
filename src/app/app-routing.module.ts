@@ -13,7 +13,7 @@ import { ConfigurablePageComponent } from './components/configurable-page/config
 const routes: Routes = [
   {path:"customer-view", component:CustomersViewAllComponent},
   {path:"login", component:LoginComponent},
-  {path:"interview-home", component:InterviewerHomeComponent},
+  {path:"interviewer-home", component:InterviewerHomeComponent},
   {path:"", component:LandingpageComponent},
   {path:"home", component:LandingpageComponent},
   {path:"add-customer", component:AddCustomerComponent},
