@@ -15,6 +15,8 @@ import { CandidateService } from './services/candidate.service';
 import { InterviewerService } from './services/interviewer.service';
 import { PmoHomeComponent } from './components/pmo-home/pmo-home.component';
 import { LoginComponent } from './components/login/login.component';
+
+import { CandidateOnboardingComponent } from './components/candidate-onboarding/candidate-onboarding.component';
 import { EditSkillModalComponent } from './edit-skill-modal/edit-skill-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -37,7 +39,9 @@ import { AdduserComponent } from './components/adduser/adduser.component';
     SkillManagementComponent,
     CandidateHomeComponent,
     InterviewerHomeComponent,
+    PmoHomeComponent,
     LoginComponent,
+    CandidateOnboardingComponent,
     EditSkillModalComponent,
     CustomersViewAllComponent,
     AddCustomerComponent,
