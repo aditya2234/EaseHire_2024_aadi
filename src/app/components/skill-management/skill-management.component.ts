@@ -1,4 +1,4 @@
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { EditSkillModalComponent } from '../../edit-skill-modal/edit-skill-modal.component';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -12,7 +12,11 @@ import { SkillService } from '../../services/skill-management.service';
 export class SkillManagementComponent implements OnInit {
   skillForm!: FormGroup;
   skills: any[] = [];
+  filteredSkills: any[] = [];
+  searchTermType: string = '';
+  searchTermName: string = '';
   editingSkill: any | null = null;
+  existingEditDialogRef: MatDialogRef<EditSkillModalComponent, any> | null = null;
 
   constructor(private fb: FormBuilder, private skillService: SkillService, public dialog: MatDialog) {}
 
@@ -20,6 +24,7 @@ export class SkillManagementComponent implements OnInit {
     this.skillForm = this.fb.group({
       skill_name: [''],
       skill_type: [''],
+      search: ['']
     });
     this.loadSkills();
   }
@@ -28,11 +33,21 @@ export class SkillManagementComponent implements OnInit {
     this.skillService.getSkills().subscribe(
       (data: any) => {
         this.skills = data.items || data;
+        this.filteredSkills = this.skills;
         console.log(this.skills);
       },
       (error) => {
         console.error('Error loading skills:', error);
       }
+    );
+  }
+
+  filterSkills(): void {
+    const searchValueType = this.searchTermType.toLowerCase();
+    const searchValueName = this.searchTermName.toLowerCase();
+    this.filteredSkills = this.skills.filter(skill =>
+      skill.skill_type.toLowerCase().includes(searchValueType) &&
+      skill.skill_name.toLowerCase().includes(searchValueName)
     );
   }
 
@@ -70,17 +85,23 @@ export class SkillManagementComponent implements OnInit {
       (data: any) => {
         console.log('Fetched skill data:', data);
         const dialogConfig = new MatDialogConfig();
-        dialogConfig.width = '400px';
+        dialogConfig.width = '60%';
+        dialogConfig.height = '400px';
         dialogConfig.data = { ...data, skill_id };
         dialogConfig.disableClose = true;
         dialogConfig.autoFocus = true;
 
-        const dialogRef = this.dialog.open(EditSkillModalComponent, dialogConfig);
+        if (this.existingEditDialogRef != null) {
+          return;
+        }
 
+        const dialogRef = this.dialog.open(EditSkillModalComponent, dialogConfig);
+        this.existingEditDialogRef = dialogRef;
         dialogRef.afterClosed().subscribe(result => {
           if (result) {
             this.loadSkills();
           }
+          this.existingEditDialogRef = null;
         });
       },
       (error) => {

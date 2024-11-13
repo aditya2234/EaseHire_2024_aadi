@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SkillService } from '../services/skill-management.service';
 
-
 @Component({
   selector: 'app-edit-skill-modal',
   templateUrl: './edit-skill-modal.component.html',
@@ -15,7 +14,7 @@ export class EditSkillModalComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private skillService: SkillService,
-    public dialogRef: MatDialogRef<EditSkillModalComponent>,
+    private dialogRef: MatDialogRef<EditSkillModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 

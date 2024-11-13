@@ -1,9 +1,30 @@
 <div class="max-w-2xl mx-auto p-4">
+  <div class="flex items-center mb-4 space-x-4">
+    <div class="w-1/3">
+      <label for="searchSkillType" class="block text-sm font-medium text-gray-700">Search by Skill Type:</label>
+      <div class="relative mt-1">
+        <input id="searchSkillType" type="text" [(ngModel)]="searchTermType" placeholder="Search here" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+        <button (click)="filterSkills()" class="absolute inset-y-0 right-0 px-3 py-2 bg-indigo-600 text-white rounded-r-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <i class="material-icons">search</i>
+        </button>
+      </div>
+    </div>
+    <div class="w-1/3">
+      <label for="searchSkillName" class="block text-sm font-medium text-gray-700">Search by Skill Name:</label>
+      <div class="relative mt-1">
+        <input id="searchSkillName" type="text" [(ngModel)]="searchTermName" placeholder="Search here" class="block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+        <button (click)="filterSkills()" class="absolute inset-y-0 right-0 px-3 py-2 bg-indigo-600 text-white rounded-r-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <i class="material-icons">search</i>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <h2 class="text-2xl font-bold mb-4">Skill Management</h2>
   <form [formGroup]="skillForm" (ngSubmit)="onSubmit()" class="space-y-4">
     <div>
       <label for="skillName" class="block text-sm font-medium text-gray-700">Skill Name:</label>
-      <input id="skillName" formControlName="skill_name" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      <input id="skillName" formControlName="skill_name" type="text" placeholder="Type here" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
     </div>
     
     <div>
@@ -20,10 +41,11 @@
   </form>
 
   <ul class="mt-8 space-y-4">
-    <li *ngFor="let skill of skills" class="p-4 border border-gray-300 rounded-md shadow-sm">
+    <li *ngFor="let skill of filteredSkills" class="p-4 border border-gray-300 rounded-md shadow-sm">
       <div class="flex justify-between items-center">
         <div>
           <h3 class="text-lg font-medium">{{ skill.skill_name }}</h3>
+          <p>{{ skill.skill_type }}</p>
         </div>
         <div class="space-x-2">
           <button mat-button class="edit-button" (click)="editSkill(skill.skill_id)">Edit</button>
