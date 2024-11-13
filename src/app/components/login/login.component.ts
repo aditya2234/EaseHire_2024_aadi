@@ -30,8 +30,9 @@ export class LoginComponent {
       const { email_id, password } = this.loginForm.value;
       this.loginService.login(email_id,password).subscribe((data) => {
         console.log(data);
-        this.router.navigate(['/home'])
-        window.location.reload()
+        localStorage.setItem('role_id', JSON.stringify(data.ROLE_ID));
+        this.router.navigate(['/home']);
+        window.location.reload();
       });
     }
   }
