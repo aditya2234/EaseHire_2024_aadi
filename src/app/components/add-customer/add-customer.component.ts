@@ -18,7 +18,7 @@ export class AddCustomerComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required],
       numberOfEmployees: [0, [Validators.required, Validators.min(1)]],
-      projectsOngoing: ['', Validators.required], // Changed to a simple text input
+      // projectsOngoing: ['', Validators.required],
       ageOfClient: [0, [Validators.required, Validators.min(0)]],
       industry: ['', Validators.required],
       revenue: [0, [Validators.required, Validators.min(0)]],
@@ -33,12 +33,13 @@ export class AddCustomerComponent implements OnInit {
       const formValue = this.customerForm.value;
       const newCustomer: Customer = {
         ...formValue,
-        projectsOngoing: formValue.projectsOngoing.split(',').map((id: string) => parseInt(id.trim(), 10)) // Convert input to array of numbers
+        // projectsOngoing: formValue.projectsOngoing.split(',').map((id: string) => parseInt(id.trim(), 10)) // Convert input to array of numbers
       };
       this.customerService.addCustomer(newCustomer).subscribe(customer => {
         console.log('Customer added:', customer);
         this.customerForm.reset();
       });
+      console.log(newCustomer);
     }
   }
 }

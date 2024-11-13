@@ -5,7 +5,7 @@ export interface Customer {
     email: string;
     address: string;
     numberOfEmployees: number;
-    projectsOngoing: number[]; // Array of project IDs
+    projectsOngoing?: number[]; // Array of project IDs
     ageOfClient: number; // Age of the client relationship in years
     industry: string; // Industry the client belongs to
     revenue: number; // Annual revenue of the client
