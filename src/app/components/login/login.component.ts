@@ -29,6 +29,7 @@ export class LoginComponent {
       const { email_id, password } = this.loginForm.value;
       this.loginService.login(email_id,password).subscribe((data) => {
         console.log(data);
+        localStorage.setItem('role_id', JSON.stringify(data.ROLE_ID));
       });
     }
   }

@@ -1,46 +1,39 @@
-<div class="min-h-screen flex flex-col items-center justify-center bg-white p-4">
-    <!-- Header -->
-    <header class="w-full max-w-2xl mb-6 text-center">
-      <h1 class="text-5xl font-extrabold text-indigo-600 animate-fadeIn">ADD USER</h1>
-    </header>
-  
-    <!-- Add User Form -->
-    <!-- <div class="bg-gray-100 p-8 rounded-lg shadow-lg w-full max-w-2xl">
-      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-        <div class="mb-4">
-          <label for="role_id" class="block text-gray-700 font-semibold">Role ID</label>
-          <input type="number" id="role_id" formControlName="role_id" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required autocomplete="off">
-        </div>
-        <div class="mb-4">
-          <label for="first_name" class="block text-gray-700 font-semibold">First Name</label>
-          <input type="text" id="first_name" formControlName="first_name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required autocomplete="given-name">
-        </div>
-        <div class="mb-4">
-          <label for="last_name" class="block text-gray-700 font-semibold">Last Name</label>
-          <input type="text" id="last_name" formControlName="last_name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required autocomplete="family-name">
-        </div>
-        <div class="mb-4">
-          <label for="psno" class="block text-gray-700 font-semibold">PS No</label>
-          <input type="number" id="psno" formControlName="psno" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required autocomplete="off">
-        </div>
-        <div class="mb-4">
-          <label for="doj" class="block text-gray-700 font-semibold">Date of Joining</label>
-          <input type="" id="doj" formControlName="doj" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required autocomplete="off">
-        </div>
-        <div class="mb-4">
-          <label for="grade" class="block text-gray-700 font-semibold">Grade</label>
-          <input type="text" id="grade" formControlName="grade" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required autocomplete="off">
-        </div>
-        <div class="mb-4">
-          <label for="email_id" class="block text-gray-700 font-semibold">Email ID</label>
-          <input type="email" id="email_id" formControlName="email_id" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required autocomplete="email">
-        </div>
-        <div class="mb-6">
-          <label for="user_password" class="block text-gray-700 font-semibold">Password</label>
-          <input type="password" id="user_password" formControlName="password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required autocomplete="password">
-        </div>
-        <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Add User</button>
-      </form> -->
+<div class="form-container">
+  <h2>Add User</h2>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Role Id</label>
+      <input formControlName="role_id" type="text" class="form-control" />
     </div>
-  <!-- </div> -->
-  
+    <div class="form-group">
+      <label>First Name</label>
+      <input formControlName="first_name" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input formControlName="last_name" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>PSNO</label>
+      <input formControlName="psno" type="number" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Date of Joining</label>
+      <input formControlName="doj" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Grade</label>
+      <input formControlName="grade" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Email ID</label>
+      <input formControlName="email_id" type="email" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input formControlName="password" type="password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Submit</button>
+  </form>
+  <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+</div>
