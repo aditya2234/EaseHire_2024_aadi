@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
 import { SkillManagementComponent } from './components/skill-management/skill-management.component';
@@ -28,6 +27,8 @@ import { ConfigurablePageComponent } from './components/configurable-page/config
 import { SharedModule } from './shared/shared.module';
 import { CustomersViewAllComponent } from './components/customers-view-all/customers-view-all.component';
 import { AdduserComponent } from './components/adduser/adduser.component';
+import { NavbarComponent } from './components/role-based-navbar/navbar.component';
+import { GenericNavbarComponent } from './generic-navbar/generic-navbar.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { AdduserComponent } from './components/adduser/adduser.component';
     AddCustomerComponent,
     AdduserComponent,
     ConfigurablePageComponent,
-    PmoHomeComponent
+    PmoHomeComponent,
+    GenericNavbarComponent
   ],
   imports: [
     BrowserModule,

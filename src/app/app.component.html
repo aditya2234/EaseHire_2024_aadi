@@ -1,4 +1,6 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf="isLoggedIn"></app-navbar>
+<app-generic-navbar *ngIf="isLoggedIn==false"></app-generic-navbar>
+
 <!-- <app-candidate-onboarding></app-candidate-onboarding> -->
 <!-- <app-navbar></app-navbar> -->
  <!-- <app-landingpage></app-landingpage>

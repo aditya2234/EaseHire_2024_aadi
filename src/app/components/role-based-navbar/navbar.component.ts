@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavbarService } from '../../services/navbar.service';
 import { LoginService } from '../../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +17,7 @@ export class NavbarComponent {
   isInterviewee: boolean = false;
   isInterviewer: boolean = false;
 
-  constructor(private navbarService: NavbarService,private loginService:LoginService) { }
+  constructor(private navbarService: NavbarService,private loginService:LoginService, private router:Router) { }
 
   ngOnInit(): void {
     // this.getNavLinksById(1);
@@ -24,7 +25,7 @@ export class NavbarComponent {
     this.showPMOoptions()
   }
 
-  // ngAfterContentInit():void{
+  // ngAfterContentChecked():void{
   //   this.showPMOoptions()
 
   // }
@@ -83,8 +84,11 @@ export class NavbarComponent {
 
   isLoggedOut(){
     localStorage.removeItem('role_id')
+    localStorage.removeItem('user_name')
     // this.selectedNavLinks=[]
     this.isLoggedIn = false
+    this.router.navigate(['/home'])
+    window.location.reload();
   }
 
   
