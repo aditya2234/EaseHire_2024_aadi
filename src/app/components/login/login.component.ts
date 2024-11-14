@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+// import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private loginService: LoginService,
-    private router:Router
+    private router:Router,
+    // private navbarComp: NavbarComponent
   ) {
     this.loginForm = this.fb.group({
       email_id: ['', Validators.required],
@@ -34,6 +36,7 @@ export class LoginComponent {
         localStorage.setItem('user_name', JSON.stringify(data.FIRST_NAME));
         this.router.navigate(['/home']);
         // window.location.reload();
+        // this.navbarComp.showPMOoptions();
       });
     }
   }

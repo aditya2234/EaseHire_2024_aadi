@@ -11,7 +11,7 @@ import { CandidateHomeComponent } from './components/candidate-home/candidate-ho
 import { ConfigurablePageComponent } from './components/configurable-page/configurable-page.component';
 
 const routes: Routes = [
-  {path:"customer-view", component:CustomersViewAllComponent},
+  {path:"opportunities-view", component:CustomersViewAllComponent},
   {path:"login", component:LoginComponent},
   {path:"interviewer-home", component:InterviewerHomeComponent},
   {path:"", component:LandingpageComponent},
