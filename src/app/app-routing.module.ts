@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:"interviewer-home", component:InterviewerHomeComponent},
   {path:"", component:LandingpageComponent},
   {path:"home", component:LandingpageComponent},
-  {path:"add-customer", component:AddCustomerComponent},
+  {path:"add-customer-view", component:AddCustomerComponent},
   {path:"candidate-home", component:CandidateHomeComponent},
   {path:"skill-management", component:SkillManagementComponent},
   {path:"configurable-page", component:ConfigurablePageComponent},
