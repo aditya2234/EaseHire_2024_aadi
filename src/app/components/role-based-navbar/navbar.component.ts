@@ -20,22 +20,11 @@ export class NavbarComponent {
   constructor(private navbarService: NavbarService,private loginService:LoginService, private router:Router) { }
 
   ngOnInit(): void {
-    // this.getNavLinksById(1);
-    // this.showIntervieweeOptions()
+
     this.showPMOoptions()
   }
 
-  // ngAfterContentChecked():void{
-  //   this.showPMOoptions()
-
-  // }
-
-//   getNavLinksById(roleId:number) {
-//     this.selectedNavLinks = this.navbarService.getNavLinks(roleId).items1;
-//     console.log(this.selectedNavLinks);
-//  }
-
-  
+ 
 
   showPMOoptions(): void {
     const id:any = localStorage.getItem('role_id')
@@ -46,41 +35,15 @@ export class NavbarComponent {
     console.log(this.userName);
     
     console.log("The PMO ID" + id);
-    if(id===null){
-      this.isLoggedIn=false;
-    }else{
       this.navbarService.getNavLinksById(id).subscribe(d=>{
-        this.selectedNavLinks=d.items;
-        
+        this.selectedNavLinks=d.items;        
       })
       this.isLoggedIn=true
-    }
     
     
-    // if(id === '1'){
-    //   this.isPMO=true;
-    //   this.isLoggedIn = true;
-    // }
-    
+
   }
 
-  // showIntervieweeOptions(): void {
-  //   if (this.isInterviewee && this.isLoggedIn) {
-  //     this.navbarOptions = this.navbarService.navbar_options.option1;
-  //   }
-  //   // else{
-  //   //   this.navbarOptions = this.navbarService.navbar_options.option3
-  //   // }
-  // }
-  // showIntervieweeOptions(): void {
-  //   const id:any = localStorage.getItem('role_id')
-  //   console.log("The Interviewer ID" + id);
-  //   if(id === '2'){
-  //     this.isInterviewee=true;
-  //     this.isLoggedIn = true;
-  //   }
-    
-  // }
 
   isLoggedOut(){
     localStorage.removeItem('role_id')
@@ -91,7 +54,6 @@ export class NavbarComponent {
     window.location.reload();
   }
 
-  
 
 
 }
