@@ -19,6 +19,8 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "@material/dialog": "^14.0.0",
+    "@ng-select/ng-select": "^13.9.1",
     "animations": "^0.0.0",
     "autoprefixer": "^10.4.20",
     "chart.js": "^4.4.6",

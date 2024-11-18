@@ -9,6 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './candidate-onboarding.component.css'
 })
 export class CandidateOnboardingComponent {
+
+  
+  steps:any=0;
   addCandidate:boolean=false;
   showCandidate:boolean=false;
   candidates: Candidate[]=[];//for getting all candidate details
@@ -23,13 +26,31 @@ constructor(private candidateOnboardService:CandidateOnboardingService, private 
     firstname:['',[Validators.required]],
     lastname:['',[Validators.required]],
     email:['',[Validators.required,Validators.email]],
-    phoneno:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
+    phoneno:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+    currentCompany:['',[Validators.required]],
+    lastWorkingDay:['',[Validators.required]],
+    expectedCtc:['',[Validators.required]],
+    PrefferedLocation:['',[Validators.required]],
+    tentativeJoiningDate:['',[Validators.required]],
+    gender:['',[Validators.required]],
+    panNo:['',[Validators.required]],
+    addhar:['',[Validators.required]],
+    referralSource:['',[Validators.required]]
   });
   this.editCandidateForm=fb.group({
     firstname:['',[Validators.required]],
     lastname:['',[Validators.required]],
     email:['',[Validators.required,Validators.email]],
-    phoneno:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]]
+    phoneno:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+    currentCompany:['',[Validators.required]],
+    lastWorkingDay:['',[Validators.required]],
+    expectedCtc:['',[Validators.required]],
+    PrefferedLocation:['',[Validators.required]],
+    tentativeJoiningDate:['',[Validators.required]],
+    gender:['',[Validators.required]],
+    panNo:['',[Validators.required]],
+    addhar:['',[Validators.required]],
+    referralSource:['',[Validators.required]]
   });
   
 }
@@ -41,14 +62,16 @@ ngOnInit():void{
   
 // for get all candidate details
  public getAllCandidateDetails(){
-  // this.updateCandidate=false;
-  // this.addCandidate=false;
   return this.candidateOnboardService.getAllCandidates().subscribe(data =>{
-    this.candidates=data.items;
+    this.candidates=data;
     this.candidatesforEdit=this.candidates;
     console.log("Data",this.candidates);
   });
  }
+
+
+//  edit
+
 
 //  for post candidate 
 public saveCandidate(){
@@ -65,6 +88,9 @@ public saveCandidate(){
   }
 }
 
+
+
+
 // for delete candidate
 public deleteCandidate(id:number){
   this.candidateOnboardService.deleteCandidate(id).subscribe(x=>{
@@ -75,16 +101,19 @@ public deleteCandidate(id:number){
 }
 
 // for editing candidate and it give id and check whether the data is present or not
-public editCandidate(id: number) {
-  this.showCandidate=false;
-  console.log(id)
-  let currentCandidate = this.candidatesforEdit.find((p) => p.candidateid === id);
-  this.idd=id;
-  if (currentCandidate) {
-    this.editCandidateForm.patchValue(currentCandidate);
-    this.updateCandidate = true;
-  }
-}
+// public editCandidate(id: number) {
+//   this.showCandidate=false;
+//   console.log(id)
+//   let currentCandidate = this.candidatesforEdit.find((p) => p.CANDIDATE_ID === id);
+//   this.idd=id;
+//   if (currentCandidate) {
+//     this.editCandidateForm.patchValue(currentCandidate);
+//     this.updateCandidate = true;
+//   }
+// }
+
+
+
 
 // call to backend and update the values to the backend
 public updateCandidates() {
@@ -118,5 +147,14 @@ showCandidates(){
   this.updateCandidate=false;
   this.addCandidate=false;
 this.showCandidate=true;
+}
+
+
+
+stepmakerNext(){
+  this.steps=this.steps+1;
+}
+stepmakerPrevious(){
+  this.steps=this.steps-1;
 }
 }

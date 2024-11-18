@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { find, Observable } from 'rxjs';
 import { Candidate } from '../models/candidate';
 
 @Injectable({
@@ -31,7 +31,6 @@ export class CandidateOnboardingService {
   }
   
   public editCandidateById(id: number, candidate: Candidate): Observable<any> {
-    
     console.log("servicaaaaaaaae",id,candidate);
     console.log("service",candidate);
     return this.http.put(this.updateUrl + id, candidate);

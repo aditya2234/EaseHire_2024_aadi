@@ -1,0 +1,78 @@
+<!-- For displaying all candidates -->
+<div class="getOnboardingMain">
+    <div class="searching">
+      <!-- <input type="text"  placeholder="<a>
+        <img src="https://img.icons8.com/?size=100&id=123400&format=png&color=000000" />
+      </a>" > -->
+      Search: <input type="text">
+    </div>
+    <div class="add">
+        <a (click)="addCandidates()">
+          <img src="https://img.icons8.com/external-happy-man-bomsymbols-/40/external-add-happy-man-human-resource-and-life-style-set-1-happy-man-bomsymbols-.png" alt="external-add-happy-man-human-resource-and-life-style-set-1-happy-man-bomsymbols-" />
+        </a>
+
+        <div>
+            <!-- <app-candidate-onboarding-add-edit *ngIf="clickOnImage"></app-candidate-onboarding-add-edit> -->
+            <app-candidate-onboarding *ngIf="clickOnImage"></app-candidate-onboarding>
+        </div>
+      </div>
+    </div>
+    <div class="section2">
+      <div class="getOnboarding">
+          <h2>Candidate details</h2>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Serial No.</th>
+                      <th>ID</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Email</th>
+                      <th>Mobile Number</th>
+                      <th>CURRENT_COMPANY</th>
+                      <th>LAST_WORKING_DAY</th>
+                      <th>CURRENT_CTC</th>
+                      <th>EXPECTED_CTC</th>
+                      <th>CURRENT_LOCATION</th>
+                      <th>PREFERRED_LOCATION</th>
+                      <th>TENTATIVE_JOINING_DATE</th>
+                      <th>GENDER</th>
+                      <th>PAN_NO</th>
+                      <th>AADHAR_NO</th>
+                      <th>REFERRAL_SOURCE</th>
+                      <th>Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let candidate of candidates; let i = index">
+                      <td>{{i + 1}}</td> <!-- Serial number -->
+                      <td>{{candidate.CANDIDATE_ID}}</td>
+                      <td>{{candidate.FIRST_NAME}}</td>
+                      <td>{{candidate.LAST_NAME}}</td>
+                      <td>{{candidate.EMAIL}}</td>
+                      <td>{{candidate.PHONE_NO}}</td>
+                      <td>{{candidate.CURRENT_COMPANY}}</td>
+                      <td>{{candidate.LAST_WORKING_DAY}}</td>
+                      <td>{{candidate.CURRENT_CTC}}</td>
+                      <td>{{candidate.EXPECTED_CTC}}</td>
+                      <td>{{candidate.CURRENT_LOCATION}}</td>
+                      <td>{{candidate.PREFERRED_LOCATION}}</td>
+                      <td>{{candidate.TENTATIVE_JOINING_DATE}}</td>
+                      <td>{{candidate.GENDER}}</td>
+                      <td>{{candidate.PAN_NO}}</td>
+                      <td>{{candidate.AADHAR_NO}}</td>
+                      <td>{{candidate.REFERRAL_SOURCE}}</td>
+                      <td>
+                          <button (click)="deleteCandidate(candidate.CANDIDATE_ID)"><a>
+                            <img class="imge" src="https://img.icons8.com/?size=100&id=RVDvUJYxkige&format=png&color=000000" />
+                          </a></button>&nbsp;&nbsp;
+                          <button (click)="editCandidate(candidate.CANDIDATE_ID)" class="editbtn"><a>
+                            <img  class="imge" src="https://img.icons8.com/?size=100&id=114169&format=png&color=000000" />
+                          </a></button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+    
+  </div>

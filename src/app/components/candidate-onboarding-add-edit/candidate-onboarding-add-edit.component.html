@@ -1,0 +1,156 @@
+<p>candidate-onboarding-add-edit works!</p>
+
+<!-- Form for post -->
+<div class="postOnboardingMain"  *ngIf="addCandidate" >
+    <div>
+      <h2>Add Candidate</h2>
+    </div>
+      <form class="max-w-sm mx-auto brdr form-container" [formGroup]="candidateForm" (ngSubmit)="saveCandidate()">
+  
+        <!-- Step Zero -->
+        <div class="zeroStep" *ngIf="steps==0">
+          <div class="Welcome">
+            <h1>Hy!Please fill correct details</h1>
+          </div>
+          <div>
+            <app-save-button  (click)="stepmakerNext()">Next</app-save-button>
+          </div>
+        </div>
+        
+        <!-- step One -->
+          <div class="mb-5" >
+            <div  class="step1" *ngIf="steps==1"  formGroupName="candidateDetails">
+              <div>
+                <h3>Basic Detials</h3>
+              </div>
+          <label for="p_first_name"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First_Name:</label>
+         <input type="text" id="p_first_name" formControlName="firstname"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+  
+          <label for="p_last_name"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last_Name:</label>
+          <input type="text" id="p_last_name" formControlName="lastname"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+          
+          <label for="p_phoneno"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number:</label>
+          <input type="text" id="p_phoneno" formControlName="phoneno"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+          
+          <label for="p_email"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email:</label>
+          <input type="email" id="p_email" formControlName="email"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+  
+          
+          <label for="gender"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">GENDER:</label>
+          <input type="text" id="gender" formControlName="gender"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+  
+          <label for="panNo"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">PAN_NO:</label>
+          <input type="text" id="panNo" formControlName="panNo"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+  
+          <label for="addhar"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">AADHAR_NO:</label>
+          <input type="text" id="addhar" formControlName="addhar"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+  
+          <div>
+            <app-save-button  (click)="stepmakerPrevious()">Previous</app-save-button>
+            <app-save-button  (click)="stepmakerNext()">Next</app-save-button>
+          </div>
+        </div>
+  
+        <!-- step two -->
+        <div formGroupName="candidateDetails" class="step2" *ngIf="steps==2">
+          <div>
+            <h3>Experiences and other detials</h3>
+          </div>
+          <label for="currentCompany"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CURRENT_COMPANY:</label>
+          <input type="text" id="currentCompany" formControlName="currentCompany"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+  
+          <label for="lastWorkingDay"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">LAST_WORKING_DAY:</label>
+          <input type="text" id="lastWorkingDay" formControlName="lastWorkingDay"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+  
+          <label for="currentCtc"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CURRENT_CTC:</label>
+          <input type="text" id="currentCtc" formControlName="currentCtc"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+  
+          <label for="expectedCtc"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">EXPECTED_CTC:</label>
+          <input type="text" id="expectedCtc" formControlName="expectedCtc"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+  
+          <label for="PrefferedLocation"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">PREFERRED_LOCATION:</label>
+          <input type="text" id="PrefferedLocation" formControlName="PrefferedLocation"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+  
+          <label for="tentativeJoiningDate"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">TENTATIVE_JOINING_DATE:</label>
+          <input type="text" id="tentativeJoiningDate" formControlName="tentativeJoiningDate"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+  
+  
+          <label for="referralSource"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">REFERRAL_SOURCE:</label>
+          <input type="text" id="referralSource" formControlName="referralSource"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+  
+          
+          <div>
+            <app-save-button  (click)="stepmakerPrevious()">Previous</app-save-button>
+            <app-save-button  (click)="stepmakerNext()">Next</app-save-button>
+  
+          </div>
+        </div>
+  
+        <!-- step three -->
+        <div formArrayName="candidateSkills" class="step3" *ngIf="steps == 3">
+            <label for="skills" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Skills:</label>
+            <ng-select
+              [items]="skills"
+              bindLabel="skillName"
+              placeholder="Select skills"
+              appendTo="body"
+              [multiple]="true"
+              [(ngModel)]="selectedSkills"
+              (change)="onSkillChange()"
+              [ngModelOptions]="{standalone: true}"
+              class="w-full p-2 border border-gray-300 rounded-lg">
+            </ng-select>
+        
+            <div *ngFor="let skill of candidateSkills.controls; let i = index" [formGroupName]="i" class="mt-4 flex items-center">
+              <label for="rating-{{i}}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white mr-2">{{skill.value.skillName}} Rating:</label>
+              <select id="rating-{{i}}" formControlName="skillRate" class="w-16 p-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                <option value="" disabled>Select rating</option>
+                <option *ngFor="let rating of [1, 2, 3, 4, 5,6,7,8,9,10]" [value]="rating">{{rating}}</option>
+              </select>
+              <span class="ml-2 text-gray-600">/ 10</span>
+            </div>
+          </div>
+        
+        
+          <div class="mt-6 flex justify-between" *ngIf="steps == 3">
+            <button type="button" (click)="stepmakerPrevious()" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400">Previous</button>
+            <app-save-button  (click)="stepmakerNext()">Next</app-save-button>
+            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">Save</button>
+          </div>
+
+        <!-- Step 4: Display Output -->
+        <div *ngIf="steps == 4">
+          <h2>Preview Candidate Details and confirm it.</h2>
+          <div>
+            <p><strong>First Name:</strong> {{output.candidateDetails.firstname}}</p>
+            <p><strong>Last Name:</strong> {{output.candidateDetails.lastname}}</p>
+            <p><strong>Email:</strong> {{output.candidateDetails.email}}</p>
+            <p><strong>Phone Number:</strong> {{output.candidateDetails.phoneno}}</p>
+            <p><strong>currentCompany:</strong> {{output.candidateDetails.currentCompany}}</p>
+            <p><strong>lastWorkingDay:</strong> {{output.candidateDetails.lastWorkingDay}}</p>
+            <p><strong>currentCtc:</strong> {{output.candidateDetails.currentCtc}}</p>
+            <p><strong>expectedCtc:</strong> {{output.candidateDetails.expectedCtc}}</p>
+            <p><strong>PrefferedLocation:</strong> {{output.candidateDetails.PrefferedLocation}}</p>
+            <p><strong>tentativeJoiningDate:</strong> {{output.candidateDetails.tentativeJoiningDate}}</p>
+            <p><strong>gender:</strong> {{output.candidateDetails.gender}}</p>
+            <p><strong>panNo:</strong> {{output.candidateDetails.panNo}}</p>
+            <p><strong>addhar:</strong> {{output.candidateDetails.addhar}}</p>
+            <p><strong>referralSource:</strong> {{output.candidateDetails.referralSource}}</p>
+
+            <!-- Add other candidate details here -->
+          </div>
+          <h2>Skills</h2>
+          <div *ngFor="let skill of output.candidateDetails.candidateSkills">
+            <p><strong>{{skill.skillName}}:</strong> {{skill.skillRate}} / 5</p>
+          </div>
+
+          
+        </div>
+        </div>
+  
+      
+      <!-- 3rd step -->
+    </form>
+  </div>
+  
+  

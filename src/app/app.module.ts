@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,8 @@ import { InterviewerService } from './services/interviewer.service';
 import { PmoHomeComponent } from './components/pmo-home/pmo-home.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { NgSelectModule } from '@ng-select/ng-select';
+
 import { CandidateOnboardingComponent } from './components/candidate-onboarding/candidate-onboarding.component';
 import { EditSkillModalComponent } from './edit-skill-modal/edit-skill-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -28,6 +30,8 @@ import { ConfigurablePageComponent } from './components/configurable-page/config
 import { SharedModule } from './shared/shared.module';
 import { CustomersViewAllComponent } from './components/customers-view-all/customers-view-all.component';
 import { AdduserComponent } from './components/adduser/adduser.component';
+import { CandidateOnboardingAddEditComponent } from './components/candidate-onboarding-add-edit/candidate-onboarding-add-edit.component';
+import { CandidateOnboardingViewDeleteComponent } from './components/candidate-onboarding-view-delete/candidate-onboarding-view-delete.component';
 
 
 @NgModule({
@@ -47,7 +51,9 @@ import { AdduserComponent } from './components/adduser/adduser.component';
     AddCustomerComponent,
     AdduserComponent,
     ConfigurablePageComponent,
-    PmoHomeComponent
+    PmoHomeComponent,
+    CandidateOnboardingAddEditComponent,
+    CandidateOnboardingViewDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +68,9 @@ import { AdduserComponent } from './components/adduser/adduser.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    NgSelectModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
