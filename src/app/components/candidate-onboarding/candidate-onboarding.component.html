@@ -1,7 +1,6 @@
-<p>candidate-onboarding works!</p>
-
-<app-save-button (click)="addCandidates()">Add Candidate</app-save-button>&nbsp;&nbsp;&nbsp;
+<!-- <p>candidate-onboarding works!</p> -->
 <app-save-button (click)="showCandidates()">View Candidates</app-save-button>
+<!-- <app-save-button (click)="addCandidates()">Add Candidate</app-save-button>&nbsp;&nbsp;&nbsp; -->
 
 <!-- Form for post -->
 <div class="postOnboardingMain"  *ngIf="addCandidate" >
@@ -9,58 +8,117 @@
     <h2>Add Candidate</h2>
   </div>
     <form class="max-w-sm mx-auto brdr form-container" [formGroup]="candidateForm" (ngSubmit)="saveCandidate()">
-        <div class="mb-5">
+
+      <!-- Step Zero -->
+      <div class="zeroStep" *ngIf="steps===0">
+        <div class="Welcome">
+          <h1>Hy!Please fill correct details</h1>
+        </div>
+        <div>
+          <app-save-button  (click)="stepmakerNext()">Next</app-save-button>
+        </div>
+      </div>
+      
+      <!-- step One -->
+        <div class="mb-5" >
+          <div class="step1" *ngIf="steps===1">
+            <div>
+              <h3>Basic Detials</h3>
+            </div>
         <label for="p_first_name"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First_Name:</label>
        <input type="text" id="p_first_name" formControlName="firstname"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
 
         <label for="p_last_name"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last_Name:</label>
         <input type="text" id="p_last_name" formControlName="lastname"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
-
+        
+        <label for="p_phoneno"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number:</label>
+        <input type="text" id="p_phoneno" formControlName="phoneno"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+        
         <label for="p_email"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email:</label>
         <input type="email" id="p_email" formControlName="email"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
 
-        <label for="p_phoneno"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number:</label>
-        <input type="text" id="p_phoneno" formControlName="phoneno"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+        
+        <label for="gender"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">GENDER:</label>
+        <input type="text" id="gender" formControlName="gender"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
 
-      <!-- //Button -->
+        <label for="panNo"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">PAN_NO:</label>
+        <input type="text" id="panNo" formControlName="panNo"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+
+        <label for="addhar"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">AADHAR_NO:</label>
+        <input type="text" id="addhar" formControlName="addhar"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+
+        <div>
+          <app-save-button  (click)="stepmakerPrevious()">Previous</app-save-button>
+          <app-save-button  (click)="stepmakerNext()">Next</app-save-button>
+        </div>
+      </div>
+
+      <!-- step two -->
+      <div class="step2" *ngIf="steps===2">
+        <div>
+          <h3>Experiences and other detials</h3>
+        </div>
+        <label for="currentCompany"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CURRENT_COMPANY:</label>
+        <input type="text" id="currentCompany" formControlName="currentCompany"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+
+        <label for="lastWorkingDay"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">LAST_WORKING_DAY:</label>
+        <input type="text" id="lastWorkingDay" formControlName="lastWorkingDay"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+
+        <label for="currentCtc"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">CURRENT_CTC:</label>
+        <input type="text" id="currentCtc" formControlName="currentCtc"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+
+        <label for="expectedCtc"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">EXPECTED_CTC:</label>
+        <input type="text" id="expectedCtc" formControlName="expectedCtc"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+
+        <label for="PrefferedLocation"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">PREFERRED_LOCATION:</label>
+        <input type="text" id="PrefferedLocation" formControlName="PrefferedLocation"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+
+        <label for="tentativeJoiningDate"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">TENTATIVE_JOINING_DATE:</label>
+        <input type="text" id="tentativeJoiningDate" formControlName="tentativeJoiningDate"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+
+
+        <label for="referralSource"  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">REFERRAL_SOURCE:</label>
+        <input type="text" id="referralSource" formControlName="referralSource"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ><br>
+
+        
+        <div>
+          <app-save-button  (click)="stepmakerPrevious()">Previous</app-save-button>
+          <app-save-button  (click)="stepmakerNext()">Next</app-save-button>
+
+        </div>
+      </div>
+
+      <!-- step three -->
+       <div class="step3" *ngIf="steps===3">
+      <label for="skills">Skill</label>
+        <select name="skills" id="skills">
+          <option value="Java">Java</option>
+          <option value="Python">Python</option>
+          <option value="PSQL">PSQL</option>
+          <option value="C">C</option>
+          <option value="C++">C++</option>
+          <option value="Angular">Angular</option>
+          <option value="Powerbi">Powerbi</option>
+        </select>
+        <div>
         <app-save-button type="submit">Submit</app-save-button>
+      </div>
+      </div>
+      <!-- //Button -->
     </div>
-    </form>
+
+    
+    <!-- 3rd step -->
+  </form>
 </div>
 
-<!-- For displaying all candidates -->
-<div class="getOnboardingMain" *ngIf="showCandidate">
-    <div class="getOnboarding">
-        <h2>Candidate details</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Serial No.</th>
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Mobile Number</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let candidate of candidates; let i = index">
-                    <td>{{i + 1}}</td> <!-- Serial number -->
-                    <td>{{candidate.candidateid}}</td>
-                    <td>{{candidate.firstname}}</td>
-                    <td>{{candidate.lastname}}</td>
-                    <td>{{candidate.email}}</td>
-                    <td>{{candidate.phoneno}}</td>
-                    <td>
-                        <button (click)="deleteCandidate(candidate.candidateid)">Delete</button>&nbsp;&nbsp;
-                        <button (click)="editCandidate(candidate.candidateid)" class="editbtn">Edit</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+
+<!-- 2nd step -->
+<div class="another" *ngIf="steps==2">
+
 </div>
+
+
 
 
 
