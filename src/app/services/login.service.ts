@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +12,11 @@ export class LoginService {
 
   login(email_id: string, password: string): Observable<any> {
     const body = { email_id, password };
-    console.log(body);
+    // console.log(body);
     // return this.http.post<any>(this.apiUrl, body).pipe(
     //   map(response => {
-    //     if (response && response.email && response.role_id) {
-    //       localStorage.setItem('currentUser', JSON.stringify(response));
+    //     if (response.email && response.password) {
+    //       // localStorage.setItem('currentUser', JSON.stringify(response));
     //       return response;
     //     } else {
     //       throw new Error('Invalid response format');
