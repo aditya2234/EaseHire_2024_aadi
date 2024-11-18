@@ -1,57 +1,83 @@
-<div class="mt-6 p-4 bg-white rounded-lg shadow-sm">
-    <h3 class="text-xl font-bold mb-4">Add New Customer</h3>
-    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
-      <div class="mb-4">
-        <label class="block text-gray-700">Name</label>
-        <input formControlName="name" class="w-full px-3 py-2 border rounded" required>
-        <div *ngIf="customerForm.get('name')?.invalid && customerForm.get('name')?.touched" class="text-red-500">Name is required</div>
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700">Contact</label>
-        <input formControlName="contact" class="w-full px-3 py-2 border rounded" required>
-        <div *ngIf="customerForm.get('contact')?.invalid && customerForm.get('contact')?.touched" class="text-red-500">Contact is required</div>
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700">Email</label>
-        <input formControlName="email" class="w-full px-3 py-2 border rounded" required>
-        <div *ngIf="customerForm.get('email')?.invalid && customerForm.get('email')?.touched" class="text-red-500">Valid email is required</div>
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700">Address</label>
-        <input formControlName="address" class="w-full px-3 py-2 border rounded" required>
-        <div *ngIf="customerForm.get('address')?.invalid && customerForm.get('address')?.touched" class="text-red-500">Address is required</div>
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700">Number of Employees</label>
-        <input formControlName="numberOfEmployees" type="number" class="w-full px-3 py-2 border rounded" required>
-        <div *ngIf="customerForm.get('numberOfEmployees')?.invalid && customerForm.get('numberOfEmployees')?.touched" class="text-red-500">Number of employees must be at least 1</div>
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700">Client Age</label>
-        <input formControlName="ageOfClient" type="number" class="w-full px-3 py-2 border rounded" required>
-        <div *ngIf="customerForm.get('ageOfClient')?.invalid && customerForm.get('ageOfClient')?.touched" class="text-red-500">Client age must be at least 0</div>
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700">Industry</label>
-        <input formControlName="industry" class="w-full px-3 py-2 border rounded" required>
-        <div *ngIf="customerForm.get('industry')?.invalid && customerForm.get('industry')?.touched" class="text-red-500">Industry is required</div>
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700">Revenue</label>
-        <input formControlName="revenue" type="number" class="w-full px-3 py-2 border rounded" required>
-        <div *ngIf="customerForm.get('revenue')?.invalid && customerForm.get('revenue')?.touched" class="text-red-500">Revenue must be at least 0</div>
-      </div>
-      <div class="mb-4">
-        <label class="block text-gray-700">Notes</label>
-        <textarea formControlName="notes" class="w-full px-3 py-2 border rounded"></textarea>
-      </div>
-      <!-- <div class="mb-4">
-        <label class="block text-gray-700">Projects Ongoing</label>
-        <input formControlName="projectsOngoing" class="w-full px-3 py-2 border rounded" placeholder="Enter project IDs separated by commas" required>
-        <div *ngIf="customerForm.get('projectsOngoing')?.invalid && customerForm.get('projectsOngoing')?.touched" class="text-red-500">Projects ongoing is required</div>
-      </div> -->
-      <!-- Submit button -->
-      <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" [disabled]="customerForm.invalid">Add Customer</button>  
-    </form>
+<div class="container mx-auto p-4">
+  <div class="steps mb-4">
+    <div *ngFor="let step of steps; let i = index" class="step" [class.active]="i === currentStep">
+      {{ step }}
+    </div>
   </div>
-  
+
+  <div *ngIf="currentStep === 0">
+    <div class="mb-4">
+      <label class="block">Customer Name</label>
+      <input type="text" [(ngModel)]="formData.customerName" (input)="filterData(formData.customerName)"
+        class="input" />
+
+      <ul class="mt-4" style="border: 2px solid red;" *ngIf="filteredCustomerData.length>0">
+        <li *ngFor="let item of filteredCustomerData" class="p-2 border-b" (click)="selectCustomer(item)">
+          {{ item.CUSTOMER_NAME }}
+        </li>
+      </ul>
+    </div>
+    <div class="mb-4">
+      <label class="block">Project Name</label>
+      <input type="text" [(ngModel)]="formData.projectName" (input)="filterProjects(formData.projectName)" placeholder="Search projects..."
+        class="w-full px-4 py-2 border rounded" />
+      <ul *ngIf="filteredProjects.length > 0"
+        class="absolute w-full mt-1 bg-white border rounded shadow-lg max-h-60 overflow-y-auto">
+        <li *ngFor="let project of filteredProjects" (click)="selectProject(project)"
+          class="px-4 py-2 cursor-pointer hover:bg-gray-200">
+          {{ project }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="currentStep === 1">
+    <div *ngFor="let position of formData.positions; let i = index" class="mb-4">
+      <label class="block">Date of Join</label>
+      <input type="text" [(ngModel)]="position.dateOfJoin" class="input" />
+      <label class="block">Grade</label>
+      <input type="text" [(ngModel)]="position.grade" class="input" />
+      <label class="block">Site</label>
+      <input type="text" [(ngModel)]="position.site" class="input" />
+      <label class="block">Location</label>
+      <input type="text" [(ngModel)]="position.location" class="input" />
+      <label class="block">Subcon Allowed</label>
+      <input type="text" [(ngModel)]="position.subconAllowed" class="input" />
+      <label class="block">Billing Rate</label>
+      <input type="text" [(ngModel)]="position.billingRate" class="input" />
+      <label class="block">JD</label>
+      <input type="text" [(ngModel)]="position.jd" class="input" />
+      <label class="block">RR No</label>
+      <input type="text" [(ngModel)]="position.rrNo" class="input" />
+      <label class="block">RR Type</label>
+      <input type="text" [(ngModel)]="position.rrType" class="input" />
+
+      <div *ngFor="let skill of position.skills; let j = index">
+        <div class="entry">
+          {{ skill.skill_id }}
+          {{ skillNameById(+skill.skill_id) }}
+          <input type="text" [(ngModel)]="skill.rating" placeholder="Rating" class="input" />
+          <button (click)="removeValue(skill.skill_id, i)">Remove</button>
+        </div>
+      </div>
+
+      <label for="skills">Add required skills</label>
+      <select name="skills" (change)="addToTempSkill($event, i)">
+        <option [value]="skill.skill_id" *ngFor="let skill of allSKill">{{ skill.skill_name }}</option>
+      </select>
+
+      <button (click)="removePosition(i)" class="btn bg-red-500">Delete</button>
+    </div>
+    <button (click)="addPosition()" class="btn">Add More Role</button>
+  </div>
+
+  <div *ngIf="currentStep === 2">
+    <h3>Review your data</h3>
+    <pre>{{ formData | json }}</pre>
+  </div>
+
+  <div class="mt-4">
+    <button (click)="prevStep()" [disabled]="currentStep === 0" class="btn">Back</button>
+    <button (click)="nextStep()" class="btn">{{ currentStep === steps.length - 1 ? 'Finish' : 'Next' }}</button>
+  </div>
+</div>
