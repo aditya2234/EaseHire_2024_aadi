@@ -33,7 +33,7 @@ export class LoginService {
   }
 
   isLoggedIn(): boolean {
-    return localStorage.getItem('role_id') != null;
+    return localStorage.getItem('role_id') != undefined;
   }
   
 }
