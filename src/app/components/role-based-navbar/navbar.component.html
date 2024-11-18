@@ -1,0 +1,41 @@
+     <nav class="navbar bg-indigo-100 sticky top-0 z-10 w-full px-6 py-4 text-indigo-700 bg-opacity-90  shadow-md flex justify-between items-center ">
+        <a class="navbar-brand flex items-center gap-x-2 justify-center" href="#"> <h2 class="title text-3xl">EaseHire</h2> <h3>(Logo)</h3> </a>
+        
+
+
+        <!-- <div  *ngIf="isLoggedIn===false">
+          <ul class="navbar-nav flex justify-evenly w-60">
+            <li class="nav-item ">
+              <a class="nav-link border border-black p-3 rounded hover:bg-slate-900 hover:text-white" href="#" routerLink="/login">Sign In </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link border border-black p-3 rounded hover:bg-slate-900 hover:text-white" href="#" routerLink="/register">Sign up</a>
+            </li>            
+          </ul>
+        </div> -->
+       
+
+
+        <div class="flex j justify-between  w-auto" *ngIf=" isLoggedIn" >
+            <ul class="flex  justify-evenly w-96 ">
+                <li class="px-2 cursor-pointer selected_nav " *ngFor="let link of selectedNavLinks">
+                    <a [href]="link.page_url">
+                        {{ link.page_name }}
+                    </a>
+                  </li>
+            </ul>
+
+            <div>
+                <div class="dropdown">
+                    <button class="dropbtn px-5 flex justify-between items-center gap-x-2"><p class="text-indigo-700">{{userName}}</p>
+                    <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content right-10">
+                        <button class="w-full border h-8 bg-indigo-100  hover:bg-indigo-300 ">Profile</button>
+                        <button class="w-full border h-8 bg-indigo-100  hover:bg-indigo-300 "  (click)="isLoggedOut()">LogOut</button>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        
+    </nav>

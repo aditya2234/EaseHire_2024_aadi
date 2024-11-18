@@ -1,79 +1,32 @@
-<div class="p-5 bg-gray-100 rounded-lg shadow-md">
-    <h2 class="text-2xl font-bold mb-4">Customer List</h2>
-    <ul class="space-y-4">
-      <li *ngFor="let customer of customers" class="bg-white p-4 rounded-lg shadow-sm">
-        <app-card class="flex flex-col space-y-2">
-          <div class="space-y-1">
-            <p><strong>Name:</strong> {{ customer.name }}</p>
-            <p><strong>Contact:</strong> {{ customer.contact }}</p>
-            <p><strong>Email:</strong> {{ customer.email }}</p>
-            <p><strong>Address:</strong> {{ customer.address }}</p>
-            <p><strong>Employees:</strong> {{ customer.numberOfEmployees }}</p>
-            <!-- <p><strong>Total Projects:</strong> {{ customer.projectsOngoing.length }}</p> -->
-            <p><strong>Projects:</strong></p>
-            <ul class="list-disc list-inside">
-              <li *ngFor="let projectOngoing of customer.projectsOngoing">
-                {{ projectOngoing }}
-              </li>
-            </ul>
-            <p><strong>Client Age:</strong> {{ customer.ageOfClient }} years</p>
-            <p><strong>Industry:</strong> {{ customer.industry }}</p>
-            <p><strong>Revenue:</strong> ${{ customer.revenue }}</p>
-          </div>
-          <div class="flex justify-end space-x-2">
-            <app-edit-button class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600" (click)="editCustomer(customer)">Edit</app-edit-button>
-            <app-delete-button class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600" (click)="deleteCustomer(customer.id)">Delete</app-delete-button>
-          </div>
-        </app-card>
-      </li>
-    </ul>
-  
-    <!-- Edit Form -->
-    <div *ngIf="selectedCustomer" class="mt-6 p-4 bg-white rounded-lg shadow-sm">
-      <h3 class="text-xl font-bold mb-4">Edit Customer</h3>
-      <form (ngSubmit)="onSubmit()">
-        <div class="mb-4">
-          <label class="block text-gray-700">Name</label>
-          <input [(ngModel)]="selectedCustomer.name" name="name" class="w-full px-3 py-2 border rounded" required>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700">Contact</label>
-          <input [(ngModel)]="selectedCustomer.contact" name="contact" class="w-full px-3 py-2 border rounded" required>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700">Email</label>
-          <input [(ngModel)]="selectedCustomer.email" name="email" class="w-full px-3 py-2 border rounded" required>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700">Address</label>
-          <input [(ngModel)]="selectedCustomer.address" name="address" class="w-full px-3 py-2 border rounded" required>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700">Number of Employees</label>
-          <input [(ngModel)]="selectedCustomer.numberOfEmployees" name="numberOfEmployees" type="number" class="w-full px-3 py-2 border rounded" required>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700">Projects Ongoing</label>
-          <input [(ngModel)]="selectedCustomer.projectsOngoing" name="projectsOngoing" class="w-full px-3 py-2 border rounded" required>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700">Client Age</label>
-          <input [(ngModel)]="selectedCustomer.ageOfClient" name="ageOfClient" type="number" class="w-full px-3 py-2 border rounded" required>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700">Industry</label>
-          <input [(ngModel)]="selectedCustomer.industry" name="industry" class="w-full px-3 py-2 border rounded" required>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700">Revenue</label>
-          <input [(ngModel)]="selectedCustomer.revenue" name="revenue" type="number" class="w-full px-3 py-2 border rounded" required>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700">Notes</label>
-          <textarea [(ngModel)]="selectedCustomer.notes" name="notes" class="w-full px-3 py-2 border rounded"></textarea>
-        </div>
-        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Save</button>
-      </form>
-    </div>
+<div id="viewComponent" class="p-5 bg-gray-100 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold mb-4">Onboard oppurtunity</h2>
+
+  <!-- Search Bar -->
+  <div class="flex mb-4">
+    <input [(ngModel)]="searchTerm" (input)="filterCustomers()" placeholder="Search customers..."
+      class="w-full px-3 py-2 border rounded">
+    <app-button class="px-7" (click)="addNewCustomer()">Add</app-button>
   </div>
-  
+
+  <ul>
+    <li *ngFor="let customer of filteredCustomers">
+      <app-card>
+        <div>
+          <p><strong>{{ customer.CUSTOMER_NAME }}</strong></p>
+        </div>
+        <div class="flex justify-end space-x-2">
+          <app-edit-button id="editButton" (click)="editCustomer(customer)">Edit</app-edit-button>
+          <app-delete-button (click)="deleteCustomer(customer.CUSTOMER_ID)">Delete</app-delete-button>
+        </div>
+      </app-card>
+    </li>
+  </ul>
+
+  <form *ngIf="addNewCustomerVisible" [formGroup]="customerForm" (ngSubmit)="submitAddNewCustomer()" id="addCustomer" class="space-y-4 p-4 max-w-xs mx-auto" >
+    <div class="flex flex-col">
+      <label for="customerName" class="text-sm font-medium text-gray-700">Customer Name</label>
+      <input id="customerName" formControlName="customername" type="text" class="mt-1 p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" />
+    </div>
+    <app-button type="submit">Submit</app-button>
+    <app-delete-button type="submit" >Cancel</app-delete-button>
+  </form>

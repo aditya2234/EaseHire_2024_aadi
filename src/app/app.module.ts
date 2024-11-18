@@ -1,9 +1,8 @@
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
 import { SkillManagementComponent } from './components/skill-management/skill-management.component';
@@ -11,12 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CandidateHomeComponent } from './components/candidate-home/candidate-home.component';
 import { InterviewerHomeComponent } from './components/interviewer-home/interviewer-home.component';
-import { CandidateService } from './services/candidate.service';
-import { InterviewerService } from './services/interviewer.service';
 import { PmoHomeComponent } from './components/pmo-home/pmo-home.component';
 import { LoginComponent } from './components/login/login.component';
-
-import { NgSelectModule } from '@ng-select/ng-select';
 
 import { CandidateOnboardingComponent } from './components/candidate-onboarding/candidate-onboarding.component';
 import { EditSkillModalComponent } from './edit-skill-modal/edit-skill-modal.component';
@@ -30,8 +25,8 @@ import { ConfigurablePageComponent } from './components/configurable-page/config
 import { SharedModule } from './shared/shared.module';
 import { CustomersViewAllComponent } from './components/customers-view-all/customers-view-all.component';
 import { AdduserComponent } from './components/adduser/adduser.component';
-import { CandidateOnboardingAddEditComponent } from './components/candidate-onboarding-add-edit/candidate-onboarding-add-edit.component';
-import { CandidateOnboardingViewDeleteComponent } from './components/candidate-onboarding-view-delete/candidate-onboarding-view-delete.component';
+import { NavbarComponent } from './components/role-based-navbar/navbar.component';
+import { GenericNavbarComponent } from './generic-navbar/generic-navbar.component';
 
 
 @NgModule({
@@ -52,8 +47,7 @@ import { CandidateOnboardingViewDeleteComponent } from './components/candidate-o
     AdduserComponent,
     ConfigurablePageComponent,
     PmoHomeComponent,
-    CandidateOnboardingAddEditComponent,
-    CandidateOnboardingViewDeleteComponent
+    GenericNavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -67,10 +61,8 @@ import { CandidateOnboardingViewDeleteComponent } from './components/candidate-o
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule,
     MatSelectModule,
-    NgSelectModule
-
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

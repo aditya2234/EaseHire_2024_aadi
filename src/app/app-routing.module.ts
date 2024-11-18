@@ -11,12 +11,12 @@ import { CandidateHomeComponent } from './components/candidate-home/candidate-ho
 import { ConfigurablePageComponent } from './components/configurable-page/configurable-page.component';
 
 const routes: Routes = [
-  {path:"customer-view", component:CustomersViewAllComponent},
+  {path:"opportunities-view", component:CustomersViewAllComponent},
   {path:"login", component:LoginComponent},
-  {path:"interview-home", component:InterviewerHomeComponent},
+  {path:"interviewer-home", component:InterviewerHomeComponent},
   {path:"", component:LandingpageComponent},
   {path:"home", component:LandingpageComponent},
-  {path:"add-customer", component:AddCustomerComponent},
+  {path:"add-customer-view", component:AddCustomerComponent},
   {path:"candidate-home", component:CandidateHomeComponent},
   {path:"skill-management", component:SkillManagementComponent},
   {path:"configurable-page", component:ConfigurablePageComponent},

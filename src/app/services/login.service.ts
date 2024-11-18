@@ -31,4 +31,9 @@ export class LoginService {
     console.error('An error occurred:', error.message);
     return throwError('Something went wrong; please try again later.');
   }
+
+  isLoggedIn(): boolean {
+    return localStorage.getItem('role_id') != null;
+  }
+  
 }

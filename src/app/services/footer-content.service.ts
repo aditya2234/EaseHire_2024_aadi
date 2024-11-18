@@ -10,7 +10,7 @@ export class FooterContentService {
       description: "LTIMindtree is a new kind of technology consulting company. We help businesses transform – from core to experience – to thrive in the marketplace of the future."
     },
     products: [
-      { name: "Customers view", url: "/customer-view" },
+      { name: "Customers view", url: "/opportunities-view" },
       { name: "add customer", url: "/add-customer-view" },
       { name: "BrandFlow", url: "#!" },
       { name: "Bootstrap Angular", url: "#!" }
