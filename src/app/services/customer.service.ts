@@ -7,6 +7,19 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class CustomerService {
+
+   projects ={
+    projectArray:
+    [
+      { "id": 1, "name": "Project Alpha" },
+      { "id": 2, "name": "Project Beta" },
+      { "id": 3, "name": "Project Gamma" },
+      { "id": 4, "name": "Project Delta" },
+      { "id": 5, "name": "Project Epsilon" }
+    ]
+   }
+  
+
   apiUrl =
     'https://g50fee11f63aa4c-jkuqq5cm0d4x1svt.adb.ap-mumbai-1.oraclecloudapps.com/ords/rishabh_chowdhury1/customer-side/customer_table/';
 
@@ -31,5 +44,10 @@ export class CustomerService {
       'https://g50fee11f63aa4c-jkuqq5cm0d4x1svt.adb.ap-mumbai-1.oraclecloudapps.com/ords/rishabh_chowdhury1/customer/' +
         id
     );
+  }
+
+
+  getProjectsByCustomer(customer_id:number){
+    return this.projects;
   }
 }
